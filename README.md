@@ -1,4 +1,4 @@
-ember-apollo-client-cache
+ember-graphql-client
 ==============================================================================
 
 [Short description of the addon.]
@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-apollo-client-cache
+ember install ember-graphql-client
 ```
 
 

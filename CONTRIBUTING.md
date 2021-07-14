@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd ember-apollo-client-cache`
+* `cd ember-graphql-client`
 * `yarn install`
 
 ## Linting
