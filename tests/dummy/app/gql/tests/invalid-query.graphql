@@ -1,0 +1,6 @@
+query invalidQuery {
+  post(invalid: "yes") {
+    id
+    title
+  }
+}

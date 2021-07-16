@@ -1,0 +1,6 @@
+query singlePost {
+  post(id: 1) {
+    id
+    title
+  }
+}

@@ -21,6 +21,10 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
+    graphql: {
+      apiURL: 'https://graphqlzero.almansi.me/api',
+    },
   };
 
   if (environment === 'development') {

@@ -1,0 +1,6 @@
+mutation createPost {
+  createPost(input: { title: "test title", body: "test body" }) {
+    id
+    title
+  }
+}

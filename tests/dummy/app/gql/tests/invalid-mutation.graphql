@@ -1,0 +1,6 @@
+mutation createPost {
+  createPost(invalid: "yes") {
+    id
+    title
+  }
+}

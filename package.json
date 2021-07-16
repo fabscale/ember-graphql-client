@@ -21,18 +21,26 @@
     "lint:ts": "tsc",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
-    "test": "npm-run-all lint test:*",
-    "test:ember": "ember test",
-    "test:ember-compatibility": "ember try:each",
+    "start": "MOCK_GRAPHQL=true ember serve",
+    "test": "MOCK_GRAPHQL=true npm-run-all lint test:*",
+    "test:ember": "MOCK_GRAPHQL=true ember test",
+    "test:ember-compatibility": "MOCK_GRAPHQL=true ember try:each",
     "prepack": "ember ts:precompile",
     "postpack": "ember ts:clean"
   },
   "dependencies": {
+    "@ember/test-waiters": "^2.4.5",
+    "@embroider/macros": "^0.43.0",
+    "@graphql-tools/schema": "^7.1.5",
+    "@graphql-tools/utils": "^7.10.0",
+    "broccoli-graphql-filter": "^1.0.0",
     "ember-auto-import": "~2.0.2",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
-    "ember-cli-typescript": "^4.2.1"
+    "ember-cli-typescript": "^4.2.1",
+    "ember-fetch": "^8.1.0",
+    "graphql": "~15.5.1",
+    "graphql-request": "^3.4.0"
   },
   "devDependencies": {
     "@ember/optional-features": "~2.0.0",

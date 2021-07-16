@@ -109,6 +109,7 @@ module.exports = {
       rules: {
         'ember/avoid-leaking-state-in-ember-objects': 0,
         '@typescript-eslint/no-empty-function': 0,
+        'qunit/require-expect': 0,
       },
     },
   ],

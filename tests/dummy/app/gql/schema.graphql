@@ -1,0 +1,93 @@
+type Mutation {
+  createPost(input: CreatePostInput!): Post
+}
+
+type Query {
+  posts(options: PageQueryOptions): PostsPage
+  post(id: ID!): Post
+}
+
+input CreatePostInput {
+  title: String!
+  body: String!
+}
+
+type PageLimitPair {
+  page: Int
+  limit: Int
+}
+
+type PageMetadata {
+  totalCount: Int
+}
+
+input PageQueryOptions {
+  paginate: PaginateOptions
+  slice: SliceOptions
+  sort: [SortOptions]
+  operators: [OperatorOptions]
+  search: SearchOptions
+}
+
+input PaginateOptions {
+  page: Int
+  limit: Int
+}
+
+type PaginationLinks {
+  first: PageLimitPair
+  prev: PageLimitPair
+  next: PageLimitPair
+  last: PageLimitPair
+}
+
+type Post {
+  id: ID!
+  title: String
+  body: String
+  user: User!
+}
+
+type PostsPage {
+  data: [Post]
+  links: PaginationLinks
+  meta: PageMetadata
+}
+
+input SearchOptions {
+  q: String
+}
+
+input SliceOptions {
+  start: Int
+  end: Int
+  limit: Int
+}
+
+input SortOptions {
+  field: String
+  order: SortOrderEnum
+}
+
+enum SortOrderEnum {
+  ASC
+  DESC
+}
+
+enum OperatorKindEnum {
+  GTE
+  LTE
+  NE
+  LIKE
+}
+
+input OperatorOptions {
+  kind: OperatorKindEnum
+  field: String
+  value: String
+}
+type User {
+  id: ID
+  name: String
+  email: String
+}
