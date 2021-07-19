@@ -1,4 +1,3 @@
-import GraphQLService from '@ember-graphql-client/client/services/graphql';
 import { setupMockGraphQLRequestClient } from '@ember-graphql-client/mock/test-support/helpers';
 import { currentURL, visit } from '@ember/test-helpers';
 import click from '@ember/test-helpers/dom/click';
@@ -72,7 +71,7 @@ module('Acceptance | graphql', function (hooks) {
       },
     };
 
-    let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+    let graphql = this.owner.lookup('service:graphql');
 
     setupMockGraphQLRequestClient(graphql, schema, resolvers);
 

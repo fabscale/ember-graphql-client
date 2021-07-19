@@ -1,16 +1,14 @@
+import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
+import { mockGraphQLError } from '@ember-graphql-client/mock/mock-graphql-error';
+import { getMockGraphQLRequestClient } from '@ember-graphql-client/mock/mock-graphql-request-client';
+import { mockGraphQLForTests } from '@ember-graphql-client/mock/test-support/helpers';
 import schema from 'dummy/gql/schema.graphql';
 import mutationCreateStaticPost from 'dummy/gql/tests/create-static-post.graphql';
 import mutationInvalidMutation from 'dummy/gql/tests/invalid-mutation.graphql';
 import queryInvalidQuery from 'dummy/gql/tests/invalid-query.graphql';
 import queryStaticPost from 'dummy/gql/tests/static-post.graphql';
-import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
-import GraphQLService from '@ember-graphql-client/client/services/graphql';
-import { mockGraphQLError } from '@ember-graphql-client/mock/mock-graphql-error';
-import { getMockGraphQLRequestClient } from '@ember-graphql-client/mock/mock-graphql-request-client';
 import { setupTest } from 'ember-qunit';
-import { TestContext } from 'ember-test-helpers';
 import { module, test } from 'qunit';
-import { mockGraphQLForTests } from '@ember-graphql-client/mock/test-support/helpers';
 
 module('Unit | mock-graphql-request-client', function (hooks) {
   setupTest(hooks);
@@ -40,7 +38,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
     module('query', function () {
       test('it handles validation errors', async function (assert) {
-        let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+        let graphql = this.owner.lookup('service:graphql');
 
         try {
           await graphql.query({ query: queryInvalidQuery });
@@ -75,7 +73,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
       });
 
       test('it works with minimal options', async function (assert) {
-        let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+        let graphql = this.owner.lookup('service:graphql');
 
         let response = await graphql.query({ query: queryStaticPost });
 
@@ -90,7 +88,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
     module('mutation', function () {
       test('it handles validation errors', async function (assert) {
-        let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+        let graphql = this.owner.lookup('service:graphql');
 
         try {
           await graphql.mutate({ mutation: mutationInvalidMutation });
@@ -125,7 +123,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
       });
 
       test('it works with minimal options', async function (assert) {
-        let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+        let graphql = this.owner.lookup('service:graphql');
 
         let response = await graphql.mutate({
           mutation: mutationCreateStaticPost,
@@ -142,11 +140,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
   });
 
   module('api errors', function (hooks) {
-    type Context = TestContext & {
-      error?: Error;
-    };
-
-    hooks.beforeEach(function (this: Context) {
+    hooks.beforeEach(function () {
       let resolvers = {
         Query: {
           post: () => {
@@ -163,12 +157,12 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
       let client = getMockGraphQLRequestClient(schema, resolvers);
 
-      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+      let graphql = this.owner.lookup('service:graphql');
       graphql.client = client;
     });
 
     test('thrown errors work for query', async function (assert) {
-      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+      let graphql = this.owner.lookup('service:graphql');
 
       try {
         await graphql.query({ query: queryStaticPost });
@@ -202,7 +196,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
     });
 
     test('thrown errors work for mutate', async function (assert) {
-      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+      let graphql = this.owner.lookup('service:graphql');
 
       try {
         await graphql.mutate({ mutation: mutationCreateStaticPost });
@@ -235,8 +229,8 @@ module('Unit | mock-graphql-request-client', function (hooks) {
       assert.verifySteps(['error is thrown']);
     });
 
-    test('thrown error with details work for query', async function (this: Context, assert) {
-      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+    test('thrown error with details work for query', async function (assert) {
+      let graphql = this.owner.lookup('service:graphql');
 
       this.error = mockGraphQLError({
         message: 'test extended error',
