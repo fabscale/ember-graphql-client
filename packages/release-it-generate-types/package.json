@@ -1,6 +1,6 @@
 {
   "name": "@ember-graphql-client/release-it-generate-types",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Generate types for the mock package before publishing.",
   "main": "index.js",
   "private": true,
