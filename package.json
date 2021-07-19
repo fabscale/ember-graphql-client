@@ -5,7 +5,8 @@
   "repository": "https://github.com/fabscale/ember-graphql-client",
   "workspaces": [
     "packages/client",
-    "packages/mock"
+    "packages/mock",
+    "packages/release-it-generate-types"
   ],
   "scripts": {
     "lint:js": "eslint . --cache"
@@ -13,6 +14,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "~4.28.0",
     "@typescript-eslint/parser": "~4.28.0",
+    "@ember-graphql-client/release-it-generate-types": "*",
     "babel-eslint": "~10.1.0",
     "eslint": "~7.31.0",
     "eslint-config-prettier": "~8.3.0",
@@ -31,6 +33,7 @@
   },
   "release-it": {
     "plugins": {
+      "@ember-graphql-client/release-it-generate-types": {},
       "release-it-lerna-changelog": {
         "infile": "CHANGELOG.md"
       },

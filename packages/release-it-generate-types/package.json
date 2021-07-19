@@ -1,0 +1,12 @@
+{
+  "name": "@ember-graphql-client/release-it-generate-types",
+  "version": "0.1.2",
+  "description": "Generate types for the mock package before publishing.",
+  "main": "index.js",
+  "peerDpendencies": {
+    "release-it": "~14.10.0"
+  },
+  "devDependencies": {
+    "release-it": "~14.10.0"
+  }
+}
