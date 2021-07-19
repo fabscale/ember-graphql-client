@@ -1,0 +1,13 @@
+{{#if this.posts}}
+  <ul>
+    {{#each this.posts as |post|}}
+      <li>
+        <LinkTo @route='post' @model={{post.id}} data-test-post='{{post.id}}'>
+          {{post.title}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  Loading...
+{{/if}}

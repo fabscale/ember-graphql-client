@@ -1,0 +1,9 @@
+query allPosts($page: Int, $pageSize: Int) {
+  posts(options: { paginate: { page: $page, limit: $pageSize } }) {
+    data {
+      id
+      title
+      body
+    }
+  }
+}

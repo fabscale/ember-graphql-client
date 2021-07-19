@@ -1,0 +1,11 @@
+{{#if this.post}}
+  <h2 data-test-title>
+    {{this.post.title}}
+  </h2>
+
+  <p data-test-body>
+    {{this.post.body}}
+  </p>
+{{else}}
+  Loading...
+{{/if}}

@@ -1,38 +1,16 @@
-ember-graphql-client
-==============================================================================
+# ember-graphql-client
 
-[Short description of the addon.]
+Packages to work with a minimal GraphQL client in Ember apps, including easy to use caching.
 
+## Using GraphQL in your app
 
-Compatibility
-------------------------------------------------------------------------------
+- Install `@ember-graphql-client/client`: `ember install @ember-graphql-client/client`
+- Configure your API
+- Use `graphql.query()` and `graphql.mutate()` in your app
 
-* Ember.js v3.20 or above
-* Ember CLI v3.20 or above
-* Node.js v10 or above
+## Using a mocked GraphQL API
 
+If you need a mocked API, either for tests or for development/demo purposes, you can also do that:
 
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install ember-graphql-client
-```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
-
-
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+- Install `@ember-graphql-client/mock`: `ember install @ember-graphql-client/mock`
+- Configure your resolvers and enable the mock

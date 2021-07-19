@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd ember-graphql-client`
+* `cd ember-l10n`
 * `yarn install`
 
 ## Linting
