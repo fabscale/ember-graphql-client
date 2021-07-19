@@ -24,6 +24,7 @@
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
+    "test:ember-one": "ember try:one",
     "test:ember-compatibility": "ember try:each",
     "prepack": "ember ts:precompile",
     "postpack": "ember ts:clean"
