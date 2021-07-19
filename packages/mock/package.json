@@ -26,8 +26,8 @@
     "test:ember": "ember test",
     "test:ember-one": "ember try:one",
     "test:ember-compatibility": "ember try:each",
-    "prepack": "ember ts:precompile",
-    "postpack": "ember ts:clean"
+    "ts:precompile": "ember ts:precompile",
+    "ts:clean": "ember ts:clean"
   },
   "dependencies": {
     "@ember-graphql-client/client": "0.1.4",

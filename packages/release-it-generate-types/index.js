@@ -3,13 +3,16 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 module.exports = class ReleateItGenerateTypesPlugin extends Plugin {
-  beforeRelease() {
-    console.log('RUN NOW!!!');
-    return exec('cd packages/client && yarn prepack');
+  async beforeRelease() {
+    this.log.info('Generating types to publish to npm...');
+    await exec('cd packages/client && yarn ts:precompile');
+    await exec('cd packages/mock && yarn ts:precompile');
+    this.log.info('Types generated successfully!');
   }
 
-  afterRelease() {
-    console.log('CLEANUP!');
-    return exec('cd packages/client && yarn postpack');
+  async afterRelease() {
+    this.log.info('Cleaning generated types...');
+    await exec('cd packages/client && yarn ts:clean');
+    await exec('cd packages/mock && yarn ts:clean');
   }
 };

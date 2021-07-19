@@ -27,7 +27,6 @@
       "@ember-graphql-client/mock/*": ["addon/*"],
       "@ember-graphql-client/mock/test-support": ["addon-test-support"],
       "@ember-graphql-client/mock/test-support/*": ["addon-test-support/*"],
-      "@ember-graphql-client/client/*": ["./../client/addon/*"],
       "fetch": ["./../../node_modules/ember-fetch"],
       "*": ["types/*"]
     }
