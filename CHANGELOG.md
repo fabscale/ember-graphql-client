@@ -1,3 +1,12 @@
+## v0.1.6 (2021-07-19)
+
+#### :house: Internal
+* `client`, `mock`, `release-it-generate-types`
+  * [#5](https://github.com/fabscale/ember-graphql-client/pull/5) chore: Remove typescript from mock package for simplicity ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.1.5 (2021-07-19)
 
 ## v0.1.4 (2021-07-19)
