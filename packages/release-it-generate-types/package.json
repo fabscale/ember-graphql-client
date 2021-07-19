@@ -3,6 +3,7 @@
   "version": "0.1.3",
   "description": "Generate types for the mock package before publishing.",
   "main": "index.js",
+  "private": true,
   "peerDpendencies": {
     "release-it": "~14.10.0"
   },
