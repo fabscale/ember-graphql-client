@@ -4,7 +4,10 @@ Packages to work with a minimal GraphQL client in Ember apps, including easy to 
 
 ## Using GraphQL in your app
 
-- Install `@ember-graphql-client/client`: `ember install @ember-graphql-client/client`
+- Install [@ember-graphql-client/client](./packages/client):
+```bash
+ ember install @ember-graphql-client/client
+ ```
 - Configure your API
 - Use `graphql.query()` and `graphql.mutate()` in your app
 
@@ -12,5 +15,8 @@ Packages to work with a minimal GraphQL client in Ember apps, including easy to 
 
 If you need a mocked API, either for tests or for development/demo purposes, you can also do that:
 
-- Install `@ember-graphql-client/mock`: `ember install @ember-graphql-client/mock`
+- Install [@ember-graphql-client/mock](./packages/mock):
+```bash
+ember install @ember-graphql-client/mock
+```
 - Configure your resolvers and enable the mock
