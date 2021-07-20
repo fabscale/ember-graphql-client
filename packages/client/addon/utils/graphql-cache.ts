@@ -1,6 +1,6 @@
 import { QueryOptions } from '@ember-graphql-client/client/utils/graphql-request-client';
 
-export default class GraphQLCache {
+export class GraphQLCache {
   _entityCacheMap = new Map();
 
   getCache(entityName: string, entityId?: string): GraphQLEntityCache {
@@ -52,6 +52,8 @@ export class GraphQLEntityCache {
     this._queryCacheMap.delete(hash);
   }
 }
+
+export default GraphQLCache;
 
 // Based on: https://werxltd.com/wp/2010/05/13/javascript-implementation-of-javas-string-hashcode-method/
 function hashOptions(options: QueryOptions): number {
