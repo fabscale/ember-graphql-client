@@ -1,3 +1,12 @@
+## v0.2.3 (2021-07-20)
+
+#### :bug: Bug Fix
+* `client`
+  * [#9](https://github.com/fabscale/ember-graphql-client/pull/9) chore: Avoid using private methods to avoid issues ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.2 (2021-07-20)
 
 #### :rocket: Enhancement
