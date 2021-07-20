@@ -1,3 +1,12 @@
+## v0.2.1 (2021-07-20)
+
+#### :house: Internal
+* `client`, `mock`
+  * [#7](https://github.com/fabscale/ember-graphql-client/pull/7) chore: Fix npmignore ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.0 (2021-07-20)
 
 ## v0.1.6 (2021-07-19)
