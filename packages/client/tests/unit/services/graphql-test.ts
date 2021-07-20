@@ -7,6 +7,7 @@ import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-clie
 import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-error';
 import GraphQLService from '@ember-graphql-client/client/services/graphql';
 import GraphQLRequestClient, {
+  GraphQLRequestClientInterface,
   QueryOptions,
 } from '@ember-graphql-client/client/utils/graphql-request-client';
 import { setupTest } from 'ember-qunit';
@@ -62,6 +63,38 @@ module('Unit | Service | graphql', function (hooks) {
           'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
       });
     });
+
+    test('it allows to provide a one-off client', async function (assert) {
+      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+
+      let client: GraphQLRequestClientInterface = {
+        query: async () => {
+          return {
+            post: {
+              id: '99',
+              title: 'mocked title',
+            },
+          };
+        },
+
+        mutate: async () => {
+          return {};
+        },
+      };
+
+      let response = await graphql.query(
+        { query: queryStaticPost },
+        {},
+        client
+      );
+
+      assert.deepEqual(response, {
+        post: {
+          id: '99',
+          title: 'mocked title',
+        },
+      });
+    });
   });
 
   module('mutate', function () {
@@ -110,6 +143,40 @@ module('Unit | Service | graphql', function (hooks) {
       assert.deepEqual(response, {
         id: '101',
         title: 'test title',
+      });
+    });
+
+    test('it allows to provide a one-off client', async function (assert) {
+      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+
+      let client: GraphQLRequestClientInterface = {
+        query: async () => {
+          return {};
+        },
+
+        mutate: async () => {
+          return {
+            createPost: {
+              id: '99',
+              title: 'mocked title',
+            },
+          };
+        },
+      };
+
+      let response = await graphql.mutate(
+        {
+          mutation: mutationCreateStaticPost,
+        },
+        {},
+        client
+      );
+
+      assert.deepEqual(response, {
+        createPost: {
+          id: '99',
+          title: 'mocked title',
+        },
       });
     });
   });
