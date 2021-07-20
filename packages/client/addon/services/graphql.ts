@@ -31,9 +31,9 @@ type GraphqlResponse = any;
 export default class GraphQLService extends Service {
   cache: GraphQLCache = new GraphQLCache();
 
-  #apiURL?: string;
-  #options: Record<string, any> = {};
-  #headers: Record<string, string> = {};
+  _apiURL?: string;
+  _options: Record<string, any> = {};
+  _headers: Record<string, string> = {};
 
   errorHandler?: (
     error: any,
@@ -41,46 +41,46 @@ export default class GraphQLService extends Service {
   ) => false | Error;
 
   get apiURL(): string | undefined {
-    return this.#apiURL;
+    return this._apiURL;
   }
 
   set apiURL(apiURL: string | undefined) {
-    this.#apiURL = apiURL;
+    this._apiURL = apiURL;
   }
 
   get headers(): Record<string, string> {
-    return this.#headers;
+    return this._headers;
   }
 
   set headers(headers: Record<string, string>) {
-    this.#headers = headers;
+    this._headers = headers;
   }
 
   get options(): any {
-    return this.#options;
+    return this._options;
   }
 
   set options(options: Record<string, any>) {
-    this.#options = options;
+    this._options = options;
   }
 
-  #client?: GraphQLRequestClientInterface;
+  _client?: GraphQLRequestClientInterface;
   get client(): GraphQLRequestClientInterface {
-    if (this.#client) {
-      return this.#client;
+    if (this._client) {
+      return this._client;
     }
 
     let graphQLClient = this._setupUnderlyingClient();
     let client = new GraphQLRequestClient(graphQLClient);
 
     // eslint-disable-next-line ember/no-side-effects
-    this.#client = client;
+    this._client = client;
 
     return client;
   }
 
   set client(client: GraphQLRequestClientInterface | undefined) {
-    this.#client = client;
+    this._client = client;
   }
 
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -90,8 +90,8 @@ export default class GraphQLService extends Service {
     let config =
       getOwner(this).resolveRegistration('config:environment').graphql || {};
 
-    this.#options = config.options;
-    this.#apiURL = config.apiURL;
+    this._options = config.options;
+    this._apiURL = config.apiURL;
   }
 
   async query(
@@ -100,7 +100,7 @@ export default class GraphQLService extends Service {
     client: GraphQLRequestClientInterface = this.client
   ): Promise<GraphqlResponse> {
     let cachedResponse = options
-      ? this.#maybeUseCachedResponse(options, cacheOptions)
+      ? this._maybeUseCachedResponse(options, cacheOptions)
       : undefined;
 
     if (cachedResponse) {
@@ -109,10 +109,10 @@ export default class GraphQLService extends Service {
 
     try {
       let response = await client.query(options);
-      this.#maybeStoreCachedResponse(options, cacheOptions, response);
+      this._maybeStoreCachedResponse(options, cacheOptions, response);
       return response;
     } catch (error) {
-      throw this.#handleError(error);
+      throw this._handleError(error);
     }
   }
 
@@ -126,7 +126,7 @@ export default class GraphQLService extends Service {
     try {
       response = await client.mutate(options);
     } catch (error) {
-      throw this.#handleError(error);
+      throw this._handleError(error);
     }
 
     if (cacheOptions?.invalidateCache) {
@@ -155,7 +155,7 @@ export default class GraphQLService extends Service {
     cache.clear();
   }
 
-  #maybeUseCachedResponse(
+  _maybeUseCachedResponse(
     options: QueryOptions,
     cacheOptions: QueryCacheOptions | undefined
   ): undefined | GraphqlResponse {
@@ -189,7 +189,7 @@ export default class GraphQLService extends Service {
     return undefined;
   }
 
-  #maybeStoreCachedResponse(
+  _maybeStoreCachedResponse(
     options: QueryOptions,
     cacheOptions: QueryCacheOptions | undefined,
     response: GraphqlResponse
@@ -208,7 +208,7 @@ export default class GraphQLService extends Service {
     cache.set(options, response);
   }
 
-  #handleError(error: Error): Error {
+  _handleError(error: Error): Error {
     if (this.errorHandler) {
       let handledError = this.errorHandler(error, { source: 'mutate' });
       if (handledError !== false) {
