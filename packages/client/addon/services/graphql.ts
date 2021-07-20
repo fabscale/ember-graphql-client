@@ -96,7 +96,8 @@ export default class GraphQLService extends Service {
 
   async query(
     options: QueryOptions,
-    cacheOptions?: QueryCacheOptions
+    cacheOptions?: QueryCacheOptions,
+    client: GraphQLRequestClientInterface = this.client
   ): Promise<GraphqlResponse> {
     let cachedResponse = options
       ? this.#maybeUseCachedResponse(options, cacheOptions)
@@ -107,7 +108,7 @@ export default class GraphQLService extends Service {
     }
 
     try {
-      let response = await this.client.query(options);
+      let response = await client.query(options);
       this.#maybeStoreCachedResponse(options, cacheOptions, response);
       return response;
     } catch (error) {
@@ -117,12 +118,13 @@ export default class GraphQLService extends Service {
 
   async mutate(
     options: MutationOptions,
-    cacheOptions?: MutationCacheOptions
+    cacheOptions?: MutationCacheOptions,
+    client: GraphQLRequestClientInterface = this.client
   ): Promise<GraphqlResponse> {
     let response;
 
     try {
-      response = await this.client.mutate(options);
+      response = await client.mutate(options);
     } catch (error) {
       throw this.#handleError(error);
     }
