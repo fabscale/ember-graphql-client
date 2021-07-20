@@ -1,3 +1,12 @@
+## v0.2.2 (2021-07-20)
+
+#### :rocket: Enhancement
+* `client`, `mock`
+  * [#8](https://github.com/fabscale/ember-graphql-client/pull/8) Provide named exports for utils ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.1 (2021-07-20)
 
 #### :house: Internal
