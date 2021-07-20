@@ -10,7 +10,7 @@ export interface GraphQLClientErrorRecord {
   locations?: { line: number; column: number }[];
 }
 
-export default class GraphQLClientError extends Error {
+export class GraphQLClientError extends Error {
   response: GraphQLResponse;
   request: GraphQLRequestContext;
   errors: GraphQLClientErrorRecord[];
@@ -34,3 +34,5 @@ export default class GraphQLClientError extends Error {
     return this.errors;
   }
 }
+
+export default GraphQLClientError;

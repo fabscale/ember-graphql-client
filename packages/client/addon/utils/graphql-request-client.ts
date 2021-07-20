@@ -21,9 +21,7 @@ export interface GraphQLRequestClientInterface {
   mutate(options: MutationOptions): Promise<any>;
 }
 
-export default class GraphQLRequestClient
-  implements GraphQLRequestClientInterface
-{
+export class GraphQLRequestClient implements GraphQLRequestClientInterface {
   client: GraphQLClient;
 
   constructor(client: GraphQLClient) {
@@ -64,3 +62,5 @@ export default class GraphQLRequestClient
     return waitForPromise(promise);
   }
 }
+
+export default GraphQLRequestClient;
