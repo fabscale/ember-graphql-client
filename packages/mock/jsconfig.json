@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "paths": {
+      "dummy/tests/*": ["tests/*"],
+      "dummy/*": ["tests/dummy/app/*", "app/*"],
+      "@ember-graphql-client/mock": ["addon"],
+      "@ember-graphql-client/mock/*": ["addon/*"],
+      "@ember-graphql-client/mock/test-support": ["addon-test-support"],
+      "@ember-graphql-client/mock/test-support/*": ["addon-test-support/*"],
+      "fetch": ["./../../node_modules/ember-fetch"],
+      "*": ["types/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "tmp", "coverage", "vendor", ".git"]
+}
