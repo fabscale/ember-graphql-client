@@ -13,13 +13,13 @@ import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-err
 import { isNetworkError } from '@ember-graphql-client/client/utils/is-network-error';
 import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
 
-type QueryCacheOptions = {
+export type QueryCacheOptions = {
   cacheEntity?: string;
   cacheSeconds?: number;
   cacheId?: string;
 };
 
-type MutationCacheOptions = {
+export type MutationCacheOptions = {
   invalidateCache?: {
     cacheEntity: string;
     cacheId?: string;
