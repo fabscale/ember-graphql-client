@@ -81,7 +81,7 @@ class MockGraphQLRequestClient {
 
       let response = {
         errors,
-        status: 400,
+        status: 200,
       };
 
       throw new ClientError(response, executionContext);
