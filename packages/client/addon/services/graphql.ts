@@ -37,7 +37,7 @@ export default class GraphQLService extends Service {
 
   errorHandler?: (
     error: any,
-    options: { source: 'query' | 'mutate' }
+    options: { source: 'query' | 'mutate'; originalError: Error }
   ) => false | Error;
 
   get apiURL(): string | undefined {
@@ -112,7 +112,7 @@ export default class GraphQLService extends Service {
       this._maybeStoreCachedResponse(options, cacheOptions, response);
       return response;
     } catch (error) {
-      throw this._handleError(error);
+      throw this._handleError(error, { source: 'query' });
     }
   }
 
@@ -126,7 +126,7 @@ export default class GraphQLService extends Service {
     try {
       response = await client.mutate(options);
     } catch (error) {
-      throw this._handleError(error);
+      throw this._handleError(error, { source: 'mutate' });
     }
 
     if (cacheOptions?.invalidateCache) {
@@ -208,24 +208,33 @@ export default class GraphQLService extends Service {
     cache.set(options, response);
   }
 
-  _handleError(error: Error): Error {
+  _handleError(
+    error: Error,
+    { source }: { source: 'mutate' | 'query' }
+  ): Error {
+    let parsedError = error;
+
+    // Network error, e.g. offline
+    if (isNetworkError(error)) {
+      parsedError = new GraphQLNetworkError();
+    }
+
+    if (error instanceof ClientError) {
+      parsedError = new GraphQLClientError(error);
+    }
+
     if (this.errorHandler) {
-      let handledError = this.errorHandler(error, { source: 'mutate' });
+      let handledError = this.errorHandler(parsedError, {
+        source,
+        originalError: error,
+      });
+
       if (handledError !== false) {
         return handledError;
       }
     }
 
-    // Network error, e.g. offline
-    if (isNetworkError(error)) {
-      return new GraphQLNetworkError();
-    }
-
-    if (error instanceof ClientError) {
-      return new GraphQLClientError(error);
-    }
-
-    return error;
+    return parsedError;
   }
 
   _setupUnderlyingClient(): GraphQLClient {
