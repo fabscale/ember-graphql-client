@@ -1,3 +1,12 @@
+## v0.2.5 (2021-07-21)
+
+#### :rocket: Enhancement
+* `client`
+  * [#11](https://github.com/fabscale/ember-graphql-client/pull/11) feat: Pass parsed error to errorHandler & fix source on handler ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.4 (2021-07-21)
 
 #### :rocket: Enhancement
