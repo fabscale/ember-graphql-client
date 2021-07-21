@@ -1,4 +1,3 @@
-import { waitForPromise } from '@ember/test-waiters';
 import type { DocumentNode } from 'graphql';
 import { GraphQLClient } from 'graphql-request';
 
@@ -28,7 +27,7 @@ export class GraphQLRequestClient implements GraphQLRequestClientInterface {
     this.client = client;
   }
 
-  async _query({
+  async query({
     query,
     variables,
     headers,
@@ -39,13 +38,7 @@ export class GraphQLRequestClient implements GraphQLRequestClientInterface {
     return namespace && response ? response[namespace] : response;
   }
 
-  query(options: QueryOptions): Promise<any> {
-    let promise = this._query(options);
-
-    return waitForPromise(promise);
-  }
-
-  async _mutate({
+  async mutate({
     mutation,
     variables,
     headers,
@@ -54,12 +47,6 @@ export class GraphQLRequestClient implements GraphQLRequestClientInterface {
     let response = await this.client.request(mutation, variables, headers);
 
     return namespace && response ? response[namespace] : response;
-  }
-
-  mutate(options: MutationOptions): Promise<any> {
-    let promise = this._mutate(options);
-
-    return waitForPromise(promise);
   }
 }
 
