@@ -12,6 +12,7 @@ import fetch from 'fetch';
 import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-error';
 import { isNetworkError } from '@ember-graphql-client/client/utils/is-network-error';
 import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
+import { buildWaiter } from '@ember/test-waiters';
 
 export type QueryCacheOptions = {
   cacheEntity?: string;
@@ -27,6 +28,8 @@ export type MutationCacheOptions = {
 };
 
 type GraphqlResponse = any;
+
+const waiter = buildWaiter('@ember-graphql-client/client:request-waiter');
 
 export default class GraphQLService extends Service {
   cache: GraphQLCache = new GraphQLCache();
@@ -107,11 +110,14 @@ export default class GraphQLService extends Service {
       return cachedResponse;
     }
 
+    let token = waiter.beginAsync();
     try {
       let response = await client.query(options);
       this._maybeStoreCachedResponse(options, cacheOptions, response);
+      waiter.endAsync(token);
       return response;
     } catch (error) {
+      waiter.endAsync(token);
       throw this._handleError(error, { source: 'query' });
     }
   }
@@ -123,15 +129,19 @@ export default class GraphQLService extends Service {
   ): Promise<GraphqlResponse> {
     let response;
 
+    let token = waiter.beginAsync();
     try {
       response = await client.mutate(options);
     } catch (error) {
+      waiter.endAsync(token);
       throw this._handleError(error, { source: 'mutate' });
     }
 
     if (cacheOptions?.invalidateCache) {
       this.invalidateCache(cacheOptions.invalidateCache);
     }
+
+    waiter.endAsync(token);
 
     return response;
   }
