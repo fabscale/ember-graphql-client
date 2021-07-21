@@ -1,3 +1,13 @@
+## v0.2.7 (2021-07-21)
+
+#### :bug: Bug Fix
+* `mock`
+  * [#14](https://github.com/fabscale/ember-graphql-client/pull/14) fix: Ensure status code for GraphQL errors is 200 ([@mydea](https://github.com/mydea))
+  * [#13](https://github.com/fabscale/ember-graphql-client/pull/13) fix: Fix TS types for mock package ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.6 (2021-07-21)
 
 #### :rocket: Enhancement
