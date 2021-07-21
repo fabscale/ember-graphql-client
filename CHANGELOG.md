@@ -1,3 +1,12 @@
+## v0.2.4 (2021-07-21)
+
+#### :rocket: Enhancement
+* `client`
+  * [#10](https://github.com/fabscale/ember-graphql-client/pull/10) feat: Handle non-200 errors ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.3 (2021-07-20)
 
 #### :bug: Bug Fix
