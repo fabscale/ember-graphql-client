@@ -216,7 +216,7 @@ export default class GraphQLService extends Service {
       }
     }
 
-    // Network error
+    // Network error, e.g. offline
     if (isNetworkError(error)) {
       return new GraphQLNetworkError();
     }
