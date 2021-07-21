@@ -1,3 +1,12 @@
+## v0.2.6 (2021-07-21)
+
+#### :rocket: Enhancement
+* `client`, `mock`
+  * [#12](https://github.com/fabscale/ember-graphql-client/pull/12) feat: Fix provided types for mock package ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.5 (2021-07-21)
 
 #### :rocket: Enhancement
