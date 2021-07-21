@@ -1,5 +1,7 @@
-export default class GraphQLNetworkError extends Error {
+export class GraphQLNetworkError extends Error {
   constructor() {
     super('A network error occurred');
   }
 }
+
+export default GraphQLNetworkError;
