@@ -51,7 +51,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
           assert.equal(
             error.message,
-            'Argument "id" of required type "ID!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"id\\" of required type \\"ID!\\" was not provided.","locations":[],"path":["post"]}],"status":400},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+            'Argument "id" of required type "ID!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"id\\" of required type \\"ID!\\" was not provided.","locations":[],"path":["post"]}],"status":200},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
             'correct error is thrown'
           );
           assert.deepEqual(
@@ -101,7 +101,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
           assert.equal(
             error.message,
-            'Argument "input" of required type "CreatePostInput!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"input\\" of required type \\"CreatePostInput!\\" was not provided.","locations":[],"path":["createPost"]}],"status":400},"request":{"query":"mutation createPost {\\n  createPost(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+            'Argument "input" of required type "CreatePostInput!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"input\\" of required type \\"CreatePostInput!\\" was not provided.","locations":[],"path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
             'correct error is thrown'
           );
           assert.deepEqual(
@@ -175,7 +175,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
         assert.equal(
           error.message,
-          'test query api error: {"response":{"errors":[{"name":"GraphQLError","message":"test query api error","locations":[],"path":["post"]}],"status":400},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'test query api error: {"response":{"errors":[{"name":"GraphQLError","message":"test query api error","locations":[],"path":["post"]}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is thrown'
         );
         assert.deepEqual(
@@ -209,7 +209,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
         assert.equal(
           error.message,
-          'test mutation api error: {"response":{"errors":[{"name":"GraphQLError","message":"test mutation api error","locations":[],"path":["createPost"]}],"status":400},"request":{"query":"mutation createPost {\\n  createPost(input: {title: \\"test title\\", body: \\"test body\\"}) {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'test mutation api error: {"response":{"errors":[{"name":"GraphQLError","message":"test mutation api error","locations":[],"path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(input: {title: \\"test title\\", body: \\"test body\\"}) {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is thrown'
         );
         assert.deepEqual(
@@ -248,7 +248,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
         assert.equal(
           error.message,
-          'test extended error: {"response":{"errors":[{"name":"GraphQLError","message":"test extended error","locations":[],"path":["post"],"extensions":{"code":"RESOURCE_NOT_FOUND"}}],"status":400},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'test extended error: {"response":{"errors":[{"name":"GraphQLError","message":"test extended error","locations":[],"path":["post"],"extensions":{"code":"RESOURCE_NOT_FOUND"}}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is thrown'
         );
         assert.deepEqual(
