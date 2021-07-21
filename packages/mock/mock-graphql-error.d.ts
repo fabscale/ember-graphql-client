@@ -1,6 +1,6 @@
 import { GraphQLError, Source } from 'graphql';
 
-interface GraphQLErrorInterface {
+declare interface GraphQLErrorInterface {
   message: string;
   source?: Source;
   positions?: ReadonlyArray<number>;
