@@ -1,3 +1,12 @@
+## v0.2.8 (2021-07-21)
+
+#### :bug: Bug Fix
+* `client`
+  * [#15](https://github.com/fabscale/ember-graphql-client/pull/15) refactor: Put test waiters in graphql service instead of client ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.7 (2021-07-21)
 
 #### :bug: Bug Fix
