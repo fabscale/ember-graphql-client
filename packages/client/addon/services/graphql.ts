@@ -13,6 +13,7 @@ import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-err
 import { isNetworkError } from '@ember-graphql-client/client/utils/is-network-error';
 import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
 import { buildWaiter } from '@ember/test-waiters';
+import { cached, tracked } from '@glimmer/tracking';
 
 export type QueryCacheOptions = {
   cacheEntity?: string;
@@ -34,9 +35,10 @@ const waiter = buildWaiter('@ember-graphql-client/client:request-waiter');
 export default class GraphQLService extends Service {
   cache: GraphQLCache = new GraphQLCache();
 
-  _apiURL?: string;
-  _options: Record<string, any> = {};
-  _headers: Record<string, string> = {};
+  @tracked _apiURL?: string;
+  @tracked _options: Record<string, any> = {};
+  @tracked _headers: Record<string, string> = {};
+  @tracked _client?: GraphQLRequestClientInterface;
 
   errorHandler?: (
     error: any,
@@ -49,6 +51,10 @@ export default class GraphQLService extends Service {
 
   set apiURL(apiURL: string | undefined) {
     this._apiURL = apiURL;
+    assert(
+      'Trying to set apiURL on graphql will not do anything when the client has been overwritten',
+      !this._client
+    );
   }
 
   get headers(): Record<string, string> {
@@ -57,6 +63,10 @@ export default class GraphQLService extends Service {
 
   set headers(headers: Record<string, string>) {
     this._headers = headers;
+    assert(
+      'Trying to set headers on graphql will not do anything when the client has been overwritten',
+      !this._client
+    );
   }
 
   get options(): any {
@@ -65,21 +75,24 @@ export default class GraphQLService extends Service {
 
   set options(options: Record<string, any>) {
     this._options = options;
+    assert(
+      'Trying to set options on graphql will not do anything when the client has been overwritten',
+      !this._client
+    );
   }
 
-  _client?: GraphQLRequestClientInterface;
+  @cached
   get client(): GraphQLRequestClientInterface {
+    // This is mostly for testing purposes
     if (this._client) {
       return this._client;
     }
 
-    let graphQLClient = this._setupUnderlyingClient();
-    let client = new GraphQLRequestClient(graphQLClient);
+    let { apiURL, options, headers } = this;
 
-    // eslint-disable-next-line ember/no-side-effects
-    this._client = client;
+    assert('graphql: You have to define an apiURL', typeof apiURL === 'string');
 
-    return client;
+    return this._createClient({ apiURL, options, headers });
   }
 
   set client(client: GraphQLRequestClientInterface | undefined) {
@@ -247,15 +260,21 @@ export default class GraphQLService extends Service {
     return parsedError;
   }
 
-  _setupUnderlyingClient(): GraphQLClient {
-    let { apiURL, options, headers } = this;
-
-    assert('graphql: You have to define an apiURL', typeof apiURL === 'string');
-
-    return new GraphQLClient(
+  _createClient({
+    apiURL,
+    headers,
+    options,
+  }: {
+    apiURL: string;
+    headers: Record<string, string>;
+    options: Record<string, any>;
+  }): GraphQLRequestClient {
+    let graphQLClient = new GraphQLClient(
       apiURL,
       Object.assign({ headers, fetch }, options)
     );
+
+    return new GraphQLRequestClient(graphQLClient);
   }
 }
 

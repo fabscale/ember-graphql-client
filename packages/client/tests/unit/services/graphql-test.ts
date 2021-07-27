@@ -1,21 +1,78 @@
+import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
+import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-error';
+import GraphQLService, {
+  GraphQLClient,
+} from '@ember-graphql-client/client/services/graphql';
+import GraphQLRequestClient, {
+  GraphQLRequestClientInterface,
+  QueryOptions,
+} from '@ember-graphql-client/client/utils/graphql-request-client';
 import mutationCreatePost from 'dummy/gql/tests/create-post.graphql';
 import mutationCreateStaticPost from 'dummy/gql/tests/create-static-post.graphql';
 import queryInvalidQuery from 'dummy/gql/tests/invalid-query.graphql';
 import queryPostPerId from 'dummy/gql/tests/post-per-id.graphql';
 import queryStaticPost from 'dummy/gql/tests/static-post.graphql';
-import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
-import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-error';
-import GraphQLService from '@ember-graphql-client/client/services/graphql';
-import GraphQLRequestClient, {
-  GraphQLRequestClientInterface,
-  QueryOptions,
-} from '@ember-graphql-client/client/utils/graphql-request-client';
 import { setupTest } from 'ember-qunit';
-import { module, test } from 'qunit';
 import { TestContext } from 'ember-test-helpers';
+import { module, test } from 'qunit';
 
 module('Unit | Service | graphql', function (hooks) {
   setupTest(hooks);
+
+  module('options', function () {
+    test('it allows to set & change headers and options', async function (assert) {
+      let expectedHeaders = { 'test-header': 'yes', 'other-header': 'no' };
+      let expectedCache = 'no-cache';
+
+      class ExtendedGraphQLService extends GraphQLService {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        async query(_: any): Promise<any> {
+          // @ts-ignore
+          let { client } = this.client;
+
+          assert.deepEqual(
+            client.options.headers,
+            expectedHeaders,
+            'headers are correct'
+          );
+          assert.strictEqual(
+            client.options.cache,
+            expectedCache,
+            'cache options is correct'
+          );
+          assert.step('query is called');
+
+          return {};
+        }
+      }
+
+      this.owner.register('service:graphql', ExtendedGraphQLService);
+      let graphql = this.owner.lookup(
+        'service:graphql'
+      ) as ExtendedGraphQLService;
+
+      graphql.headers = { 'test-header': 'yes', 'other-header': 'no' };
+      graphql.options = { cache: 'no-cache' };
+
+      await graphql.query({ query: queryStaticPost });
+
+      graphql.options = { cache: '' };
+      expectedCache = '';
+
+      await graphql.query({ query: queryStaticPost });
+
+      graphql.headers = { 'test-header': 'no', 'other-header': 'yes' };
+      expectedHeaders = { 'test-header': 'no', 'other-header': 'yes' };
+
+      await graphql.query({ query: queryStaticPost });
+
+      assert.verifySteps([
+        'query is called',
+        'query is called',
+        'query is called',
+      ]);
+    });
+  });
 
   module('query', function () {
     test('it works with minimal options', async function (assert) {
@@ -333,7 +390,7 @@ module('Unit | Service | graphql', function (hooks) {
 
       let graphql = this.owner.lookup('service:graphql') as GraphQLService;
 
-      let graphQLClient = graphql._setupUnderlyingClient();
+      let graphQLClient = new GraphQLClient(graphql.apiURL!, {});
       let client = new TestGraphQLRequestClient(graphQLClient);
 
       graphql.client = client;

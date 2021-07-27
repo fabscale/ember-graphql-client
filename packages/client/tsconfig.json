@@ -27,6 +27,10 @@
       "@ember-graphql-client/client/*": ["addon/*"],
       "@ember-graphql-client/client/test-support": ["addon-test-support"],
       "@ember-graphql-client/client/test-support/*": ["addon-test-support/*"],
+      "@glimmer/tracking": [
+        "./../../node_modules/ember-cached-decorator-polyfill",
+        "./../../node_modules/@glimmer/tracking/dist/types"
+      ],
       "fetch": ["./../../node_modules/ember-fetch"],
       "*": ["types/*"]
     }

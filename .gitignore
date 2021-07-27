@@ -11,8 +11,8 @@ node_modules/
 # misc
 /.env*
 /.pnp*
-/.sass-cache
-/.eslintcache
+.sass-cache
+.eslintcache
 /connect.lock
 /coverage/
 /libpeerconnection.log
