@@ -1,3 +1,12 @@
+## v0.2.9 (2021-07-27)
+
+#### :bug: Bug Fix
+* `client`, `mock`
+  * [#16](https://github.com/fabscale/ember-graphql-client/pull/16) Handle changing headers/options ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.2.8 (2021-07-21)
 
 #### :bug: Bug Fix
