@@ -1,6 +1,6 @@
 {
   "name": "@ember-graphql-client/mock",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
@@ -27,7 +27,7 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "@ember-graphql-client/client": "0.2.9",
+    "@ember-graphql-client/client": "0.3.0",
     "@graphql-tools/schema": "^8.1.2",
     "@graphql-tools/utils": "^8.1.1",
     "ember-auto-import": "^2.1.0",
