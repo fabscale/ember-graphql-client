@@ -29,7 +29,7 @@
   "dependencies": {
     "@ember-graphql-client/client": "0.2.9",
     "@graphql-tools/schema": "^8.1.2",
-    "@graphql-tools/utils": "^7.10.0",
+    "@graphql-tools/utils": "^8.1.1",
     "ember-auto-import": "^2.1.0",
     "ember-cli-babel": "^7.26.6",
     "graphql": "~15.5.1",
