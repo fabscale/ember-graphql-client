@@ -30,7 +30,7 @@
     "postpack": "ember ts:clean"
   },
   "dependencies": {
-    "@ember/test-waiters": "^2.4.5",
+    "@ember/test-waiters": "^3.0.0",
     "broccoli-graphql-filter": "^1.0.0",
     "ember-auto-import": "~2.1.0",
     "ember-cached-decorator-polyfill": "^0.1.4",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "~2.0.0",
-    "@ember/test-helpers": "~2.2.5",
+    "@ember/test-helpers": "~2.4.1",
     "@embroider/test-setup": "~0.43.5",
     "@glimmer/component": "~1.0.4",
     "@glimmer/tracking": "~1.0.4",
