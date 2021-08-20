@@ -8,8 +8,8 @@ import type {
 export interface GraphQLClientErrorRecord extends GraphQLError {
   message: string;
   extensions?: any;
-  locations: { line: number; column: number }[];
-  path: string[];
+  locations?: { line: number; column: number }[];
+  path?: string[];
 }
 
 export class GraphQLClientError extends Error {

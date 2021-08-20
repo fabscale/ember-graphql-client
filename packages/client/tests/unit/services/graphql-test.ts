@@ -254,7 +254,7 @@ module('Unit | Service | graphql', function (hooks) {
         );
         assert.equal(
           error.message,
-          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is thrown'
         );
 
@@ -322,7 +322,7 @@ module('Unit | Service | graphql', function (hooks) {
         assert.step('errorHandler is called');
         assert.equal(
           error.message,
-          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is passed to errorHandler'
         );
 
@@ -337,7 +337,7 @@ module('Unit | Service | graphql', function (hooks) {
         assert.step('error is thrown');
         assert.equal(
           error.message,
-          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is thrown'
         );
       }
@@ -351,7 +351,7 @@ module('Unit | Service | graphql', function (hooks) {
         assert.step('errorHandler is called');
         assert.equal(
           error.message,
-          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
           'correct error is passed to errorHandler'
         );
 
