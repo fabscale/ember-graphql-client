@@ -32,7 +32,7 @@
   "dependencies": {
     "@ember/test-waiters": "^3.0.0",
     "broccoli-graphql-filter": "^1.0.0",
-    "ember-auto-import": "~2.1.0",
+    "ember-auto-import": "~2.2.0",
     "ember-cached-decorator-polyfill": "^0.1.4",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
