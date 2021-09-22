@@ -29,6 +29,9 @@
   "engines": {
     "node": "10.* || >= 12"
   },
+  "resolutions": {
+    "**/ember-auto-import": "^2.2.0"
+  },
   "release-it": {
     "plugins": {
       "release-it-lerna-changelog": {
