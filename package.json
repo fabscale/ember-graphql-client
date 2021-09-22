@@ -11,15 +11,15 @@
     "lint:js": "eslint . --cache"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "~4.29.1",
-    "@typescript-eslint/parser": "~4.29.1",
+    "@typescript-eslint/eslint-plugin": "~4.30.0",
+    "@typescript-eslint/parser": "~4.30.0",
     "babel-eslint": "~10.1.0",
     "eslint": "~7.32.0",
     "eslint-config-prettier": "~8.3.0",
     "eslint-plugin-ember": "~10.5.1",
     "eslint-plugin-ember-es6-class": "~0.0.1",
     "eslint-plugin-node": "~11.1.0",
-    "eslint-plugin-prettier": "~3.4.0",
+    "eslint-plugin-prettier": "~4.0.0",
     "eslint-plugin-qunit": "~6.2.0",
     "prettier": "~2.3.2",
     "release-it": "~14.11.5",
