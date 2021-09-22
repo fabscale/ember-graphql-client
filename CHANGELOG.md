@@ -1,4 +1,24 @@
 
+
+## v0.3.1 (2021-09-22)
+
+#### :bug: Bug Fix
+* `client`
+  * [#52](https://github.com/fabscale/ember-graphql-client/pull/52) fix: Ensure it runs before ember-cli-babel ([@mydea](https://github.com/mydea))
+
+#### :house: Internal
+* `client`, `mock`
+  * [#56](https://github.com/fabscale/ember-graphql-client/pull/56) Update dev dependencies ([@mydea](https://github.com/mydea))
+  * [#53](https://github.com/fabscale/ember-graphql-client/pull/53) Update ember-auto-import to 2.2.0 and relax all dependencies to caret ([@mydea](https://github.com/mydea))
+* `mock`
+  * [#43](https://github.com/fabscale/ember-graphql-client/pull/43) chore(deps): bump @graphql-tools/schema from 8.1.2 to 8.2.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#55](https://github.com/fabscale/ember-graphql-client/pull/55) chore(deps): bump @graphql-tools/utils from 8.1.1 to 8.2.2 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* `client`
+  * [#52](https://github.com/fabscale/ember-graphql-client/pull/52) fix: Ensure it runs before ember-cli-babel ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.3.0 (2021-08-20)
 
 #### :house: Internal
