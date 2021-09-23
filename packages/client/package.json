@@ -1,13 +1,13 @@
 {
   "name": "@ember-graphql-client/client",
   "version": "0.3.2",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "A small client to use GraphQL in your ember app, with easy to use caching.",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/fabscale/ember-graphql-client/tree/main/packages/client",
   "license": "MIT",
-  "author": "",
+  "author": "Francesco Novy <francesconovy@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
