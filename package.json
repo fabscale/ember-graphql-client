@@ -27,7 +27,7 @@
     "release-it-yarn-workspaces": "~2.0.1"
   },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": ">= 12"
   },
   "resolutions": {
     "**/ember-auto-import": "^2.2.0"
