@@ -1,5 +1,15 @@
 
 
+
+## v0.3.3 (2021-09-23)
+
+#### :house: Internal
+* `client`, `mock`
+  * [#60](https://github.com/fabscale/ember-graphql-client/pull/60) chore: Improve information in package.json ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.3.2 (2021-09-22)
 
 ## v0.3.1 (2021-09-22)
