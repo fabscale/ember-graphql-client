@@ -38,7 +38,7 @@
     "ember-cli-htmlbars": "^5.7.1",
     "ember-cli-typescript": "^4.2.1",
     "ember-fetch": "^8.1.0",
-    "graphql": "^15.5.1",
+    "graphql": "^16.0.0",
     "graphql-request": "^3.5.0"
   },
   "devDependencies": {
