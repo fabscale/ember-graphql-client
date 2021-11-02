@@ -51,14 +51,13 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
           assert.equal(
             error.message,
-            'Argument "id" of required type "ID!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"id\\" of required type \\"ID!\\" was not provided.","locations":[],"path":["post"]}],"status":200},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+            'Argument "id" of required type "ID!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"id\\" of required type \\"ID!\\" was not provided.","path":["post"]}],"status":200},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
             'correct error is thrown'
           );
           assert.deepEqual(
             error.errors,
             [
               {
-                locations: [],
                 message:
                   'Argument "id" of required type "ID!" was not provided.',
                 name: 'GraphQLError',
@@ -101,14 +100,13 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
           assert.equal(
             error.message,
-            'Argument "input" of required type "CreatePostInput!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"input\\" of required type \\"CreatePostInput!\\" was not provided.","locations":[],"path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}\\n"}}',
+            'Argument "input" of required type "CreatePostInput!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"input\\" of required type \\"CreatePostInput!\\" was not provided.","path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
             'correct error is thrown'
           );
           assert.deepEqual(
             error.errors,
             [
               {
-                locations: [],
                 message:
                   'Argument "input" of required type "CreatePostInput!" was not provided.',
                 name: 'GraphQLError',
@@ -175,14 +173,13 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
         assert.equal(
           error.message,
-          'test query api error: {"response":{"errors":[{"name":"GraphQLError","message":"test query api error","locations":[],"path":["post"]}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'test query api error: {"response":{"errors":[{"name":"GraphQLError","message":"test query api error","path":["post"]}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
         );
         assert.deepEqual(
           error.errors,
           [
             {
-              locations: [],
               message: 'test query api error',
               name: 'GraphQLError',
               path: ['post'],
@@ -209,14 +206,13 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
         assert.equal(
           error.message,
-          'test mutation api error: {"response":{"errors":[{"name":"GraphQLError","message":"test mutation api error","locations":[],"path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(input: {title: \\"test title\\", body: \\"test body\\"}) {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'test mutation api error: {"response":{"errors":[{"name":"GraphQLError","message":"test mutation api error","path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(input: {title: \\"test title\\", body: \\"test body\\"}) {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
         );
         assert.deepEqual(
           error.errors,
           [
             {
-              locations: [],
               message: 'test mutation api error',
               name: 'GraphQLError',
               path: ['createPost'],
@@ -248,7 +244,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
 
         assert.equal(
           error.message,
-          'test extended error: {"response":{"errors":[{"name":"GraphQLError","message":"test extended error","locations":[],"path":["post"],"extensions":{"code":"RESOURCE_NOT_FOUND"}}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}\\n"}}',
+          'test extended error: {"response":{"errors":[{"name":"GraphQLError","message":"test extended error","path":["post"],"extensions":{"code":"RESOURCE_NOT_FOUND"}}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
         );
         assert.deepEqual(
@@ -258,7 +254,6 @@ module('Unit | mock-graphql-request-client', function (hooks) {
               extensions: {
                 code: 'RESOURCE_NOT_FOUND',
               },
-              locations: [],
               message: 'test extended error',
               name: 'GraphQLError',
               path: ['post'],
