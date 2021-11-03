@@ -33,7 +33,7 @@
     "ember-auto-import": "^2.2.0",
     "ember-cli-babel": "^7.26.6",
     "graphql": "^16.0.0",
-    "graphql-request": "^3.5.0"
+    "graphql-request": "^3.6.1"
   },
   "devDependencies": {
     "@ember/optional-features": "~2.0.0",
