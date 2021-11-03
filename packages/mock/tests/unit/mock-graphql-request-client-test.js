@@ -49,7 +49,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
             'correct error is thrown'
           );
 
-          assert.equal(
+          assert.strictEqual(
             error.message,
             'Argument "id" of required type "ID!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"id\\" of required type \\"ID!\\" was not provided.","path":["post"]}],"status":200},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
             'correct error is thrown'
@@ -98,7 +98,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
             'correct error is thrown'
           );
 
-          assert.equal(
+          assert.strictEqual(
             error.message,
             'Argument "input" of required type "CreatePostInput!" was not provided.: {"response":{"errors":[{"name":"GraphQLError","message":"Argument \\"input\\" of required type \\"CreatePostInput!\\" was not provided.","path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
             'correct error is thrown'
@@ -171,7 +171,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
           'correct error is thrown'
         );
 
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'test query api error: {"response":{"errors":[{"name":"GraphQLError","message":"test query api error","path":["post"]}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
@@ -204,7 +204,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
           'correct error is thrown'
         );
 
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'test mutation api error: {"response":{"errors":[{"name":"GraphQLError","message":"test mutation api error","path":["createPost"]}],"status":200},"request":{"query":"mutation createPost {\\n  createPost(input: {title: \\"test title\\", body: \\"test body\\"}) {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
@@ -242,7 +242,7 @@ module('Unit | mock-graphql-request-client', function (hooks) {
           'correct error is thrown'
         );
 
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'test extended error: {"response":{"errors":[{"name":"GraphQLError","message":"test extended error","path":["post"],"extensions":{"code":"RESOURCE_NOT_FOUND"}}],"status":200},"request":{"query":"query singlePost {\\n  post(id: 1) {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'

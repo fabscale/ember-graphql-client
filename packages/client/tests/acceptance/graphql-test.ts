@@ -9,13 +9,13 @@ module('Acceptance | graphql', function (hooks) {
   test('it works', async function (assert) {
     await visit('/');
 
-    assert.equal(currentURL(), '/');
+    assert.strictEqual(currentURL(), '/');
 
     assert.dom('[data-test-post]').exists({ count: 10 });
 
     await click('[data-test-post="1"]');
 
-    assert.equal(currentURL(), '/posts/1');
+    assert.strictEqual(currentURL(), '/posts/1');
 
     assert
       .dom('[data-test-title]')
