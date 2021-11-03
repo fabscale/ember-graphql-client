@@ -11,13 +11,13 @@ module('Acceptance | graphql', function (hooks) {
   test('it works without mocked GraphQL', async function (assert) {
     await visit('/');
 
-    assert.equal(currentURL(), '/');
+    assert.strictEqual(currentURL(), '/');
 
     assert.dom('[data-test-post]').exists({ count: 10 });
 
     await click('[data-test-post="1"]');
 
-    assert.equal(currentURL(), '/posts/1');
+    assert.strictEqual(currentURL(), '/posts/1');
 
     assert
       .dom('[data-test-title]')
@@ -77,13 +77,13 @@ module('Acceptance | graphql', function (hooks) {
 
     await visit('/');
 
-    assert.equal(currentURL(), '/');
+    assert.strictEqual(currentURL(), '/');
 
     assert.dom('[data-test-post]').exists({ count: 2 });
 
     await click('[data-test-post="99"]');
 
-    assert.equal(currentURL(), '/posts/99');
+    assert.strictEqual(currentURL(), '/posts/99');
 
     assert.dom('[data-test-title]').hasText('test title 2');
     assert.dom('[data-test-body]').hasText('test body 2');

@@ -25,7 +25,7 @@ module('Unit | Service | graphql', function (hooks) {
       let expectedCache = 'no-cache';
 
       class ExtendedGraphQLService extends GraphQLService {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        // eslint-disable-next-line unused-imports/no-unused-vars
         async query(_: any): Promise<any> {
           // @ts-ignore
           let { client } = this.client;
@@ -252,7 +252,7 @@ module('Unit | Service | graphql', function (hooks) {
           error instanceof GraphQLClientError,
           'correct error is thrown'
         );
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
@@ -320,7 +320,7 @@ module('Unit | Service | graphql', function (hooks) {
       let graphql = this.owner.lookup('service:graphql') as GraphQLService;
       graphql.errorHandler = (error: any) => {
         assert.step('errorHandler is called');
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is passed to errorHandler'
@@ -335,7 +335,7 @@ module('Unit | Service | graphql', function (hooks) {
         });
       } catch (error) {
         assert.step('error is thrown');
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
@@ -349,7 +349,7 @@ module('Unit | Service | graphql', function (hooks) {
       let graphql = this.owner.lookup('service:graphql') as GraphQLService;
       graphql.errorHandler = (error: any) => {
         assert.step('errorHandler is called');
-        assert.equal(
+        assert.strictEqual(
           error.message,
           'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is passed to errorHandler'
@@ -364,7 +364,11 @@ module('Unit | Service | graphql', function (hooks) {
         });
       } catch (error) {
         assert.step('error is thrown');
-        assert.equal(error.message, 'custom error', 'correct error is thrown');
+        assert.strictEqual(
+          error.message,
+          'custom error',
+          'correct error is thrown'
+        );
       }
 
       assert.verifySteps(['errorHandler is called', 'error is thrown']);
