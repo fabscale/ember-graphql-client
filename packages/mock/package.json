@@ -1,6 +1,6 @@
 {
   "name": "@ember-graphql-client/mock",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "A package to allow mocking the GraphQL layer from @ember-graphql-client/client.",
   "keywords": [
     "ember-addon"
@@ -27,7 +27,7 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "@ember-graphql-client/client": "0.3.3",
+    "@ember-graphql-client/client": "0.4.0",
     "@graphql-tools/schema": "^8.3.1",
     "@graphql-tools/utils": "^8.2.2",
     "ember-auto-import": "^2.2.0",

@@ -1,6 +1,21 @@
 
 
 
+
+## v0.4.0 (2021-11-03)
+
+#### :house: Internal
+* `client`, `mock`
+  * [#77](https://github.com/fabscale/ember-graphql-client/pull/77) chore(deps): bump graphql-request from 3.5.0 to 3.6.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#75](https://github.com/fabscale/ember-graphql-client/pull/75) chore(deps): bump ember-cli-htmlbars from 5.7.1 to 6.0.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#80](https://github.com/fabscale/ember-graphql-client/pull/80) chore(deps): bump graphql from 15.6.0 to 16.0.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#68](https://github.com/fabscale/ember-graphql-client/pull/68) Update dev dependencies ([@mydea](https://github.com/mydea))
+* `mock`
+  * [#73](https://github.com/fabscale/ember-graphql-client/pull/73) chore(deps): bump @graphql-tools/schema from 8.2.0 to 8.3.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.3.3 (2021-09-23)
 
 #### :house: Internal
