@@ -1,7 +1,9 @@
 import { getOwner } from '@ember/application';
 import { assert } from '@ember/debug';
 import Service from '@ember/service';
-import GraphQLCache from '@ember-graphql-client/client/utils/graphql-cache';
+import GraphQLCache, {
+  GraphQLEntityCache,
+} from '@ember-graphql-client/client/utils/graphql-cache';
 import GraphQLRequestClient, {
   GraphQLRequestClientInterface,
   MutationOptions,
@@ -119,18 +121,29 @@ export default class GraphQLService extends Service {
       ? this._maybeUseCachedResponse(options, cacheOptions)
       : undefined;
 
-    if (cachedResponse) {
-      return cachedResponse;
+    let promise = cachedResponse || client.query(options);
+
+    // We cache the promise to avoid parallel network requests
+    if (!cachedResponse) {
+      this._maybeStoreCachedResponse(options, cacheOptions, promise);
     }
 
     let token = waiter.beginAsync();
     try {
-      let response = await client.query(options);
-      this._maybeStoreCachedResponse(options, cacheOptions, response);
+      let response = await promise;
+
+      // If the response is not just the cachedResponse, we try to cache it
+      if (response !== cachedResponse) {
+        this._maybeStoreCachedResponse(options, cacheOptions, response);
+      }
       waiter.endAsync(token);
       return response;
     } catch (error) {
       waiter.endAsync(token);
+
+      // Make sure to clear the cached response, to avoid having a rejected promise cached
+      this._maybeClearCachedResponse(options, cacheOptions);
+
       throw this._handleError(error, { source: 'query' });
     }
   }
@@ -182,17 +195,14 @@ export default class GraphQLService extends Service {
     options: QueryOptions,
     cacheOptions: QueryCacheOptions | undefined
   ): undefined | GraphqlResponse {
-    if (!cacheOptions) {
+    let cache = this._getCache(cacheOptions);
+
+    if (!cache) {
       return;
     }
 
-    let { cacheEntity, cacheSeconds, cacheId } = cacheOptions;
+    let { cacheSeconds } = cacheOptions!;
 
-    if (!cacheEntity) {
-      return;
-    }
-
-    let cache = this.cache.getCache(cacheEntity, cacheId);
     let cachedResponse = cache.get(options);
 
     if (typeof cachedResponse === 'undefined') {
@@ -215,8 +225,33 @@ export default class GraphQLService extends Service {
   _maybeStoreCachedResponse(
     options: QueryOptions,
     cacheOptions: QueryCacheOptions | undefined,
-    response: GraphqlResponse
+    response: GraphqlResponse | Promise<GraphqlResponse>
   ): void {
+    let cache = this._getCache(cacheOptions);
+
+    if (!cache) {
+      return;
+    }
+
+    cache.set(options, response);
+  }
+
+  _maybeClearCachedResponse(
+    options: QueryOptions,
+    cacheOptions: QueryCacheOptions | undefined
+  ): void {
+    let cache = this._getCache(cacheOptions);
+
+    if (!cache) {
+      return;
+    }
+
+    cache.remove(options);
+  }
+
+  _getCache(
+    cacheOptions: QueryCacheOptions | undefined
+  ): GraphQLEntityCache | undefined {
     if (!cacheOptions) {
       return;
     }
@@ -227,8 +262,7 @@ export default class GraphQLService extends Service {
       return;
     }
 
-    let cache = this.cache.getCache(cacheEntity, cacheId);
-    cache.set(options, response);
+    return this.cache.getCache(cacheEntity, cacheId);
   }
 
   _handleError(

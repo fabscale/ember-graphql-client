@@ -469,6 +469,43 @@ module('Unit | Service | graphql', function (hooks) {
       assert.verifySteps(['query is called for namespace=post & variables={}']);
     });
 
+    test('it works with cache & pending queries', async function (this: Context, assert) {
+      let { graphql } = this;
+
+      let promise1 = graphql.query(
+        {
+          query: queryStaticPost,
+          namespace: 'post',
+        },
+        {
+          cacheEntity: 'Post',
+        }
+      );
+
+      let promise2 = graphql.query(
+        {
+          query: queryStaticPost,
+          namespace: 'post',
+        },
+        {
+          cacheEntity: 'Post',
+        }
+      );
+
+      let response1 = await promise1;
+      let response2 = await promise2;
+
+      assert.strictEqual(response1, response2, 'responses are the same');
+
+      assert.deepEqual(response1, {
+        id: '1',
+        title:
+          'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+      });
+
+      assert.verifySteps(['query is called for namespace=post & variables={}']);
+    });
+
     test('it caches per variable set', async function (this: Context, assert) {
       let { graphql } = this;
 
@@ -625,6 +662,120 @@ module('Unit | Service | graphql', function (hooks) {
       assert.verifySteps([
         'query is called for namespace=post & variables={"id":"1"}',
         'query is called for namespace=post & variables={"id":"1"}',
+      ]);
+    });
+
+    test('it does not cache errors', async function (this: Context, assert) {
+      let shouldError = true;
+
+      class TestGraphQLRequestClient extends GraphQLRequestClient {
+        async query(options: QueryOptions): Promise<any> {
+          assert.step(
+            `query is called for namespace=${
+              options.namespace
+            } & variables=${JSON.stringify(options.variables || {})}`
+          );
+
+          await new Promise((resolve) => setTimeout(resolve, 100));
+
+          if (shouldError) {
+            throw new GraphQLNetworkError();
+          }
+
+          return super.query(options);
+        }
+      }
+
+      let graphql = this.owner.lookup('service:graphql') as GraphQLService;
+
+      let graphQLClient = new GraphQLClient(graphql.apiURL!, {});
+      let client = new TestGraphQLRequestClient(graphQLClient);
+
+      graphql.client = client;
+
+      let promise1 = graphql.query(
+        {
+          query: queryStaticPost,
+          namespace: 'post',
+        },
+        {
+          cacheEntity: 'Post',
+        }
+      );
+
+      let promise2 = graphql.query(
+        {
+          query: queryStaticPost,
+          namespace: 'post',
+        },
+        {
+          cacheEntity: 'Post',
+        }
+      );
+
+      try {
+        await promise1;
+      } catch (error) {
+        assert.true(
+          error instanceof GraphQLNetworkError,
+          'error is network error'
+        );
+        assert.step('promise1 error');
+      }
+
+      try {
+        await promise2;
+      } catch (error) {
+        assert.true(
+          error instanceof GraphQLNetworkError,
+          'error is network error'
+        );
+        assert.step('promise2 error');
+      }
+
+      try {
+        await graphql.query(
+          {
+            query: queryStaticPost,
+            namespace: 'post',
+          },
+          {
+            cacheEntity: 'Post',
+          }
+        );
+      } catch (error) {
+        assert.true(
+          error instanceof GraphQLNetworkError,
+          'error is network error'
+        );
+        assert.step('promise3 error');
+      }
+
+      shouldError = false;
+
+      let response = await graphql.query(
+        {
+          query: queryStaticPost,
+          namespace: 'post',
+        },
+        {
+          cacheEntity: 'Post',
+        }
+      );
+
+      assert.deepEqual(response, {
+        id: '1',
+        title:
+          'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
+      });
+
+      assert.verifySteps([
+        'query is called for namespace=post & variables={}',
+        'promise1 error',
+        'promise2 error',
+        'query is called for namespace=post & variables={}',
+        'promise3 error',
+        'query is called for namespace=post & variables={}',
       ]);
     });
 
