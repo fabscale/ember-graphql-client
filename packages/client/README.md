@@ -172,6 +172,9 @@ it will immediately return the same response as the last time, and _not_ hit the
 
 The `cacheEntity` and `cacheId` are required to be able to clear the cache. You can find more information on that later.
 
+Note that when using the cache, it will also avoid making parallel API requests.
+This means that if a query is currently pending, it will _not_ make an additional network request if the same query is made, but re-use the same promise.
+
 Finally, you can also decide to only use a cached record unless it is stale:
 
 ```js
