@@ -2,6 +2,20 @@
 
 
 
+
+## v0.5.0 (2021-12-22)
+
+#### :rocket: Enhancement
+* `client`
+  * [#88](https://github.com/fabscale/ember-graphql-client/pull/88) Cache pending queries ([@mydea](https://github.com/mydea))
+
+#### :house: Internal
+* `client`, `mock`
+  * [#85](https://github.com/fabscale/ember-graphql-client/pull/85) Update dev dependencies ([@mydea](https://github.com/mydea))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.4.0 (2021-11-03)
 
 #### :house: Internal
