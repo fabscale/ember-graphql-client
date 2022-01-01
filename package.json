@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "~7.16.3",
-    "@typescript-eslint/parser": "~5.5.0",
+    "@typescript-eslint/parser": "~5.8.1",
     "eslint": "~8.3.0",
     "fabscale-eslint-config": "~1.1.1",
     "prettier": "~2.5.0",
