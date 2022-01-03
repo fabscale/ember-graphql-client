@@ -24,7 +24,7 @@
     "node": ">= 12"
   },
   "resolutions": {
-    "**/ember-auto-import": "^2.2.0"
+    "**/ember-auto-import": "^2.2.4"
   },
   "release-it": {
     "plugins": {
