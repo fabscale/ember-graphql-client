@@ -23,7 +23,7 @@ module.exports = {
       ...require('fabscale-eslint-config/lib/node'),
     },
     {
-      // test files:
+      // test files
       files: ['tests/**/*-test.{js,ts}'],
       ...require('fabscale-eslint-config/lib/ember-tests'),
     },
