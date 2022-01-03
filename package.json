@@ -14,7 +14,7 @@
     "@babel/eslint-parser": "~7.16.3",
     "@typescript-eslint/parser": "~5.5.0",
     "eslint": "~8.6.0",
-    "fabscale-eslint-config": "~1.1.1",
+    "fabscale-eslint-config": "~1.2.0",
     "prettier": "~2.5.0",
     "release-it": "~14.11.8",
     "release-it-lerna-changelog": "~4.0.1",
