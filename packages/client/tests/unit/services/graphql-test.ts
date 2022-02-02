@@ -13,7 +13,7 @@ import queryInvalidQuery from 'dummy/gql/tests/invalid-query.graphql';
 import queryPostPerId from 'dummy/gql/tests/post-per-id.graphql';
 import queryStaticPost from 'dummy/gql/tests/static-post.graphql';
 import { setupTest } from 'ember-qunit';
-import { TestContext } from 'ember-test-helpers';
+import { TestContext } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 
 module('Unit | Service | graphql', function (hooks) {
