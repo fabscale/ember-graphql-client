@@ -1,6 +1,5 @@
-import { getOwner } from '@ember/application';
-import { assert } from '@ember/debug';
-import Service from '@ember/service';
+import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
+import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-error';
 import GraphQLCache, {
   GraphQLEntityCache,
 } from '@ember-graphql-client/client/utils/graphql-cache';
@@ -9,13 +8,13 @@ import GraphQLRequestClient, {
   MutationOptions,
   QueryOptions,
 } from '@ember-graphql-client/client/utils/graphql-request-client';
-import { ClientError, GraphQLClient } from 'graphql-request';
-import fetch from 'fetch';
-import GraphQLNetworkError from '@ember-graphql-client/client/errors/network-error';
 import { isNetworkError } from '@ember-graphql-client/client/utils/is-network-error';
-import GraphQLClientError from '@ember-graphql-client/client/errors/graphql-client-error';
+import { assert } from '@ember/debug';
+import Service from '@ember/service';
 import { buildWaiter } from '@ember/test-waiters';
 import { cached, tracked } from '@glimmer/tracking';
+import fetch from 'fetch';
+import { ClientError, GraphQLClient } from 'graphql-request';
 
 export type QueryCacheOptions = {
   cacheEntity?: string;
@@ -106,7 +105,7 @@ export default class GraphQLService extends Service {
     super(owner);
 
     let config =
-      getOwner(this).resolveRegistration('config:environment').graphql || {};
+      (owner.resolveRegistration('config:environment') as any).graphql || {};
 
     this._options = config.options;
     this._apiURL = config.apiURL;
