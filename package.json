@@ -11,12 +11,12 @@
     "lint:js": "eslint . --cache"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "~7.16.3",
-    "@typescript-eslint/parser": "~5.8.1",
-    "eslint": "~8.6.0",
+    "@babel/eslint-parser": "~7.17.0",
+    "@typescript-eslint/parser": "~5.10.2",
+    "eslint": "~8.8.0",
     "fabscale-eslint-config": "~1.2.0",
     "prettier": "~2.5.0",
-    "release-it": "~14.11.8",
+    "release-it": "~14.12.4",
     "release-it-lerna-changelog": "~4.0.1",
     "release-it-yarn-workspaces": "~2.0.1"
   },
@@ -24,7 +24,7 @@
     "node": ">= 12"
   },
   "resolutions": {
-    "**/ember-auto-import": "^2.2.4"
+    "**/ember-auto-import": "^2.4.0"
   },
   "release-it": {
     "plugins": {
