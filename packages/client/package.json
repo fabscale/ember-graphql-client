@@ -1,6 +1,6 @@
 {
   "name": "@ember-graphql-client/client",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A small client to use GraphQL in your ember app, with easy to use caching.",
   "keywords": [
     "ember-addon"

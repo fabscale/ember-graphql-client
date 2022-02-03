@@ -3,6 +3,25 @@
 
 
 
+
+## v0.5.1 (2022-02-03)
+
+#### :house: Internal
+* `client`, `mock`
+  * [#121](https://github.com/fabscale/ember-graphql-client/pull/121) Update dev dependendencies ([@mydea](https://github.com/mydea))
+  * [#117](https://github.com/fabscale/ember-graphql-client/pull/117) chore(deps): bump ember-auto-import from 2.2.4 to 2.4.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#112](https://github.com/fabscale/ember-graphql-client/pull/112) chore(deps): bump graphql-request from 3.6.1 to 4.0.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#120](https://github.com/fabscale/ember-graphql-client/pull/120) chore(deps): bump graphql from 16.2.0 to 16.3.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#116](https://github.com/fabscale/ember-graphql-client/pull/116) Update ember type packages to v4 ([@mydea](https://github.com/mydea))
+  * [#100](https://github.com/fabscale/ember-graphql-client/pull/100) chore(deps-dev): bump ember-cli from 3.28.4 to 4.1.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+  * [#99](https://github.com/fabscale/ember-graphql-client/pull/99) Update dev dependencies ([@mydea](https://github.com/mydea))
+  * [#92](https://github.com/fabscale/ember-graphql-client/pull/92) chore(deps): bump graphql from 16.0.0 to 16.2.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* `mock`
+  * [#118](https://github.com/fabscale/ember-graphql-client/pull/118) chore(deps): bump @graphql-tools/utils from 8.5.2 to 8.6.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.5.0 (2021-12-22)
 
 #### :rocket: Enhancement
