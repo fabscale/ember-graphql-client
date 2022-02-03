@@ -32,7 +32,7 @@
     "@graphql-tools/utils": "^8.2.2",
     "ember-auto-import": "^2.2.4",
     "ember-cli-babel": "^7.26.11",
-    "graphql": "^16.2.0",
+    "graphql": "^16.3.0",
     "graphql-request": "^3.6.1"
   },
   "devDependencies": {
