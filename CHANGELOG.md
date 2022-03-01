@@ -4,6 +4,18 @@
 
 
 
+
+## v0.5.2 (2022-03-01)
+
+#### :house: Internal
+* `client`, `mock`
+  * [#131](https://github.com/fabscale/ember-graphql-client/pull/131) Update dev dependencies ([@mydea](https://github.com/mydea))
+* `client`
+  * [#122](https://github.com/fabscale/ember-graphql-client/pull/122) chore(deps): bump ember-cli-typescript from 4.2.1 to 5.0.0 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 1
+- Francesco Novy ([@mydea](https://github.com/mydea))
+
 ## v0.5.1 (2022-02-03)
 
 #### :house: Internal
