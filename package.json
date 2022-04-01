@@ -15,7 +15,7 @@
     "@typescript-eslint/parser": "~5.13.0",
     "eslint": "~8.10.0",
     "fabscale-eslint-config": "~1.2.0",
-    "prettier": "~2.5.0",
+    "prettier": "~2.6.1",
     "release-it": "~14.12.4",
     "release-it-lerna-changelog": "~4.0.1",
     "release-it-yarn-workspaces": "~2.0.1"
