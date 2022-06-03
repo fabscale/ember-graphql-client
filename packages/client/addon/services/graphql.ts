@@ -143,7 +143,7 @@ export default class GraphQLService extends Service {
       // Make sure to clear the cached response, to avoid having a rejected promise cached
       this._maybeClearCachedResponse(options, cacheOptions);
 
-      throw this._handleError(error, { source: 'query' });
+      throw this._handleError(error as Error, { source: 'query' });
     }
   }
 
@@ -159,7 +159,7 @@ export default class GraphQLService extends Service {
       response = await client.mutate(options);
     } catch (error) {
       waiter.endAsync(token);
-      throw this._handleError(error, { source: 'mutate' });
+      throw this._handleError(error as Error, { source: 'mutate' });
     }
 
     if (cacheOptions?.invalidateCache) {

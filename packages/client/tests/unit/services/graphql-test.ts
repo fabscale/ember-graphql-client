@@ -252,14 +252,17 @@ module('Unit | Service | graphql', function (hooks) {
           error instanceof GraphQLClientError,
           'correct error is thrown'
         );
+
+        let err = error as GraphQLClientError;
+
         assert.strictEqual(
-          error.message,
+          err.message,
           'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
         );
 
         assert.deepEqual(
-          error.errors,
+          err.errors,
           [
             {
               extensions: {
@@ -336,7 +339,7 @@ module('Unit | Service | graphql', function (hooks) {
       } catch (error) {
         assert.step('error is thrown');
         assert.strictEqual(
-          error.message,
+          (error as Error).message,
           'Unknown argument "invalid" on field "post" of type "Query".: {"response":{"errors":[{"message":"Unknown argument \\"invalid\\" on field \\"post\\" of type \\"Query\\".","locations":[{"line":2,"column":8}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}},{"message":"Field \\"post\\" argument \\"id\\" of type \\"ID!\\" is required, but it was not provided.","locations":[{"line":2,"column":3}],"extensions":{"code":"GRAPHQL_VALIDATION_FAILED"}}],"status":400,"headers":{}},"request":{"query":"query invalidQuery {\\n  post(invalid: \\"yes\\") {\\n    id\\n    title\\n  }\\n}"}}',
           'correct error is thrown'
         );
@@ -365,7 +368,7 @@ module('Unit | Service | graphql', function (hooks) {
       } catch (error) {
         assert.step('error is thrown');
         assert.strictEqual(
-          error.message,
+          (error as Error).message,
           'custom error',
           'correct error is thrown'
         );
