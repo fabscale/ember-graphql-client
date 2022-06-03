@@ -36,7 +36,7 @@
     "ember-cached-decorator-polyfill": "^0.1.4",
     "ember-cli-babel": "^7.26.11",
     "ember-cli-htmlbars": "^6.0.1",
-    "ember-cli-typescript": "^5.0.0",
+    "ember-cli-typescript": "^5.1.0",
     "ember-fetch": "^8.1.0",
     "graphql": "^16.4.0",
     "graphql-request": "^4.2.0"
@@ -76,7 +76,7 @@
     "ember-load-initializers": "~2.1.2",
     "ember-qunit": "~5.1.5",
     "ember-resolver": "~8.0.3",
-    "ember-source": "~4.3.0",
+    "ember-source": "~4.4.1",
     "ember-source-channel-url": "~3.0.0",
     "ember-template-lint": "~4.3.0",
     "ember-try": "~2.0.0",
