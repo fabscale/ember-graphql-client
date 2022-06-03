@@ -11,7 +11,7 @@
     "lint:js": "eslint . --cache"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "~7.17.0",
+    "@babel/eslint-parser": "~7.18.2",
     "@typescript-eslint/parser": "~5.27.0",
     "eslint": "~8.16.0",
     "fabscale-eslint-config": "~1.4.0",
