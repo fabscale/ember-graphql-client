@@ -39,7 +39,7 @@
     "ember-cli-typescript": "^5.1.0",
     "ember-fetch": "^8.1.0",
     "graphql": "^16.4.0",
-    "graphql-request": "^4.2.0"
+    "graphql-request": "^4.3.0"
   },
   "devDependencies": {
     "@ember/optional-features": "~2.0.0",
