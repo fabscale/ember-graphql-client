@@ -187,6 +187,7 @@ export default class GraphQLService extends Service {
     cacheId?: string;
   }): void {
     let cache = this.cache.getCache(cacheEntity, cacheId);
+    // eslint-disable-next-line ember/no-array-prototype-extensions
     cache.clear();
   }
 
