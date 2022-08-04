@@ -11,10 +11,10 @@
     "lint:js": "eslint . --cache"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "~7.18.2",
-    "@typescript-eslint/parser": "~5.31.0",
+    "@babel/eslint-parser": "~7.18.9",
+    "@typescript-eslint/parser": "~5.32.0",
     "eslint": "~8.21.0",
-    "fabscale-eslint-config": "~1.5.0",
+    "fabscale-eslint-config": "~1.6.0",
     "prettier": "~2.7.1",
     "release-it": "~14.14.0",
     "release-it-lerna-changelog": "~4.0.1",
