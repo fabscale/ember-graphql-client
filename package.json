@@ -16,7 +16,7 @@
     "eslint": "~8.21.0",
     "fabscale-eslint-config": "~1.6.0",
     "prettier": "~2.7.1",
-    "release-it": "~15.2.0",
+    "release-it": "~15.4.1",
     "@release-it-plugins/lerna-changelog": "~5.0.0",
     "@release-it-plugins/workspaces": "~3.2.0"
   },
