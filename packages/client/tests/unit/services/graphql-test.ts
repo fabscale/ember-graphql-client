@@ -262,7 +262,7 @@ module('Unit | Service | graphql', function (hooks) {
         );
 
         assert.deepEqual(
-          err.errors,
+          err.errors as any[],
           [
             {
               extensions: {

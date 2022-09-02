@@ -1,16 +1,11 @@
 import { ClientError } from 'graphql-request';
-import type {
+import {
   GraphQLError,
   GraphQLRequestContext,
   GraphQLResponse,
 } from 'graphql-request/dist/types';
 
-export interface GraphQLClientErrorRecord extends GraphQLError {
-  message: string;
-  extensions?: any;
-  locations?: { line: number; column: number }[];
-  path?: string[];
-}
+export type GraphQLClientErrorRecord = GraphQLError;
 
 export class GraphQLClientError extends Error {
   response: GraphQLResponse;
@@ -36,7 +31,7 @@ export class GraphQLClientError extends Error {
             IS_PLAIN_ERROR: true,
           },
         },
-      ] as GraphQLClientErrorRecord[];
+      ] as unknown as GraphQLClientErrorRecord[];
     }
 
     this.errors = errors || [];
