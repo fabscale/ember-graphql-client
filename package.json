@@ -24,7 +24,10 @@
     "node": ">= 12"
   },
   "resolutions": {
-    "**/ember-auto-import": "^2.4.0"
+    "**/ember-auto-import": "^2.4.0",
+    "**/package-json/got": "12.3.1",
+    "**/@types/responselike": "1.0.0",
+    "**/package-json": "~8.1.0"
   },
   "release-it": {
     "plugins": {
