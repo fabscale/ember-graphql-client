@@ -11,7 +11,7 @@
     "lint:js": "eslint . --cache"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "~7.18.9",
+    "@babel/eslint-parser": "~7.19.1",
     "@release-it-plugins/lerna-changelog": "~5.0.0",
     "@release-it-plugins/workspaces": "~3.2.0",
     "@typescript-eslint/parser": "~5.36.1",
