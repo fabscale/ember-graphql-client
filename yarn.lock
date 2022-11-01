@@ -3720,10 +3720,10 @@ chrome-trace-event@^1.0.2:
   resolved "https://registry.yarnpkg.com/chrome-trace-event/-/chrome-trace-event-1.0.3.tgz#1015eced4741e15d06664a957dbbf50d041e26ac"
   integrity sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==
 
-ci-info@^3.2.0, ci-info@^3.3.1, ci-info@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.3.2.tgz#6d2967ffa407466481c6c90b6e16b3098f080128"
-  integrity sha512-xmDt/QIAdeZ9+nfdPsaBCpMvHNLFiLdjj59qjqn+6iPe6YmHGQ35sBnQ8uslRBXFmXkiZQOJRjvQeoGppoTjjg==
+ci-info@^3.2.0, ci-info@^3.3.1, ci-info@^3.4.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.5.0.tgz#bfac2a29263de4c829d806b1ab478e35091e171f"
+  integrity sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -4467,9 +4467,9 @@ electron-to-chromium@^1.4.202:
   integrity sha512-e7Wsh4ilaioBZ5bMm6+F4V5c11dh56/5Jwz7Hl5Tu1J7cnB+Pqx5qIF2iC7HPpfyQMqGSvvLP5bBAIDd2gAtGw==
 
 ember-auto-import@^1.11.3, ember-auto-import@^2.4.0, ember-auto-import@^2.4.1, ember-auto-import@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/ember-auto-import/-/ember-auto-import-2.4.2.tgz#d4d3bc6885a11cf124f606f5c37169bdf76e37ae"
-  integrity sha512-REh+1aJWpTkvN42a/ga41OuRpUsSW7UQfPr2wPtYx56o/xoSNhVBXejy7yV9ObrkN7gogz6fs2xZwih5cOwpYg==
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/ember-auto-import/-/ember-auto-import-2.4.3.tgz#0ff8ebe37a2016dbad2ccc10c0ef2dfbd0289b55"
+  integrity sha512-yqtXDixgtBgaNIiz3DIIjJgpPoV5/UWBnsYIR/IxwDYpsGswyRWQ4D+IamkCDtaGDkZ7dNE9QZDBOrJCAG6KNA==
   dependencies:
     "@babel/core" "^7.16.7"
     "@babel/plugin-proposal-class-properties" "^7.16.7"
@@ -5069,15 +5069,15 @@ ember-template-imports@^3.1.1:
     string.prototype.matchall "^4.0.6"
     validate-peer-dependencies "^1.1.0"
 
-ember-template-lint@~4.14.0:
-  version "4.14.0"
-  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-4.14.0.tgz#7807ad19fc88c99de451a639ded2e3bbd14baa74"
-  integrity sha512-kr7jvAx74y4CZxMJ+B8AYszYZjdyE0opSPo+6vLW43jKyq2oowjqPDEBd6upsUALvYtNAPn8b6D+Vbiy7UP+Kg==
+ember-template-lint@~4.17.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-4.17.0.tgz#cb779321267fe6bb00e888a7daa27c14abaf7d43"
+  integrity sha512-9Ove2WM6mPF3WRu4+ikLhdTHQAeK031dJp4WlVYzbCl1YFbtoUeKojH+/0U98hJCjiQg/dRb0baSTr+VevEyzw==
   dependencies:
     "@lint-todo/utils" "^13.0.3"
     aria-query "^5.0.2"
     chalk "^4.1.2"
-    ci-info "^3.3.2"
+    ci-info "^3.4.0"
     date-fns "^2.29.2"
     ember-template-imports "^3.1.1"
     ember-template-recast "^6.1.3"
