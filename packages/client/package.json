@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "~2.0.0",
-    "@ember/test-helpers": "~2.7.0",
+    "@ember/test-helpers": "~2.9.3",
     "@embroider/test-setup": "~1.8.3",
     "@glimmer/component": "~1.1.2",
     "@glimmer/tracking": "~1.1.2",
@@ -60,7 +60,7 @@
     "@types/ember__service": "~4.0.0",
     "@types/ember__template": "~4.0.0",
     "@types/ember__test": "~4.0.0",
-    "@types/ember__test-helpers": "~2.8.0",
+    "@types/ember__test-helpers": "~2.9.1",
     "@types/ember__utils": "~4.0.0",
     "@types/htmlbars-inline-precompile": "~3.0.0",
     "@types/qunit": "~2.19.1",
