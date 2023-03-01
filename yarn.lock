@@ -1643,15 +1643,12 @@
   dependencies:
     "@types/ms" "*"
 
-"@types/ember-qunit@~5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-5.0.1.tgz#1c4f2239d367e96df8253821218b64afe2b7180c"
-  integrity sha512-ofNGGRE9kEV0KBK7H0PBixctXrwkE6jyqd50KTR0SBOEZWehUqIfA44b6JpwJm+yrn29BM/53DWh0NcH/zP5zQ==
+"@types/ember-qunit@~6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@types/ember-qunit/-/ember-qunit-6.1.1.tgz#8350944aced173024135d9ae2b7e55105c44564e"
+  integrity sha512-1g5A3vPKhvB/CuN/EP9rBLXYaJOjzKyLYWeBtNDEQNkTuG1dAo/Hg0CCixgbBgLlzaDP8mR/n1xpg8HqQ8SUKg==
   dependencies:
-    "@types/ember-resolver" "*"
-    "@types/ember__test" "*"
-    "@types/ember__test-helpers" "*"
-    "@types/qunit" "*"
+    ember-qunit "*"
 
 "@types/ember-resolver@*", "@types/ember-resolver@~5.0.11":
   version "5.0.11"
@@ -1802,7 +1799,7 @@
   resolved "https://registry.yarnpkg.com/@types/ember__template/-/ember__template-4.0.0.tgz#3423b6ddc3a6cf0b13a1e0fd5f1a84eec664a095"
   integrity sha512-51bAEQecMKpDYRXMmVVfU7excrtxDJixRU7huUsAm4acBCqL2+TmMgTqZEkOQSNy6qnKUc2ktSzX28a9//C6pA==
 
-"@types/ember__test-helpers@*", "@types/ember__test-helpers@~2.9.1":
+"@types/ember__test-helpers@~2.9.1":
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/@types/ember__test-helpers/-/ember__test-helpers-2.9.1.tgz#1d804d1f0331a912aba450485571f9e79cb2931f"
   integrity sha512-KZ6jYr0ZiQHlklLcfyuy1j+FkvygEayf5mZ9FcaSOahw9ghK3K5TYSRDCuIBELRw//OB/WP9J7v9NduFRNfRgg==
@@ -1970,7 +1967,7 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
   integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
 
-"@types/qunit@*", "@types/qunit@~2.19.1":
+"@types/qunit@~2.19.1":
   version "2.19.2"
   resolved "https://registry.yarnpkg.com/@types/qunit/-/qunit-2.19.2.tgz#81404b3c8349594ef25964d532363cd917e60180"
   integrity sha512-hVOSrAcRtRY2R2iCQopzkiSy6BowuSFuR5llHE9R3FDxBCNP4bMdrPpxkE0jZTknn+cmFMT31RfbZWAdu5Qa1w==
@@ -4508,7 +4505,7 @@ electron-to-chromium@^1.4.202:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.241.tgz#5aa03ab94db590d8269f4518157c24b1efad34d6"
   integrity sha512-e7Wsh4ilaioBZ5bMm6+F4V5c11dh56/5Jwz7Hl5Tu1J7cnB+Pqx5qIF2iC7HPpfyQMqGSvvLP5bBAIDd2gAtGw==
 
-ember-auto-import@^2.4.0, ember-auto-import@^2.4.2, ember-auto-import@^2.5.0:
+ember-auto-import@^2.4.0, ember-auto-import@^2.5.0, ember-auto-import@^2.6.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/ember-auto-import/-/ember-auto-import-2.6.1.tgz#bd8d434143bd411b99f4a8f32d8b58414d7da4f3"
   integrity sha512-3bCRi/pXp4QslmuCXGlSz9xwR7DF5oDx3zZO5OXKzNZihtkqAM1xvGuRIdQSl46pvbAXOkp8Odl5fOen1i0dRw==
@@ -4994,20 +4991,20 @@ ember-load-initializers@~2.1.2:
     ember-cli-babel "^7.13.0"
     ember-cli-typescript "^2.0.2"
 
-ember-qunit@~6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/ember-qunit/-/ember-qunit-6.0.0.tgz#cea4766c297a25d58a3e886ccd4eb726167ea47c"
-  integrity sha512-idNWh9Ap2HN9e3Xozh5Jrciu5tDhn0okM/bgwDjdks3dwuMhEox45iiRTx469FWQ9+ixjZ40AsXsRTDkfCmvmw==
+ember-qunit@*, ember-qunit@~6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/ember-qunit/-/ember-qunit-6.2.0.tgz#4d492951035d1df5c7802c4ae6cf299c8f41d75b"
+  integrity sha512-mC+0bp8DwWzJLn8SW3GS8KDZIkl4yLsNYwMi5Dw6+aFllq7FM2crd/dfY4MuOIHK7GKdjtmWJTMGnjSpeSayaw==
   dependencies:
     broccoli-funnel "^3.0.8"
     broccoli-merge-trees "^3.0.2"
     common-tags "^1.8.0"
-    ember-auto-import "^2.4.2"
-    ember-cli-babel "^7.26.6"
+    ember-auto-import "^2.6.0"
+    ember-cli-babel "^7.26.11"
     ember-cli-test-loader "^3.0.0"
     resolve-package-path "^4.0.3"
     silent-error "^1.1.1"
-    validate-peer-dependencies "^2.1.0"
+    validate-peer-dependencies "^2.2.0"
 
 ember-resolver@~8.0.3:
   version "8.0.3"
@@ -10182,7 +10179,7 @@ resolve-package-path@^3.1.0:
     path-root "^0.1.1"
     resolve "^1.17.0"
 
-resolve-package-path@^4.0.0, resolve-package-path@^4.0.1, resolve-package-path@^4.0.3:
+resolve-package-path@^4.0.1, resolve-package-path@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/resolve-package-path/-/resolve-package-path-4.0.3.tgz#31dab6897236ea6613c72b83658d88898a9040aa"
   integrity sha512-SRpNAPW4kewOaNUt8VPqhJ0UMxawMwzJD8V7m1cJfdSTK9ieZwS6K7Dabsm4bmLFM96Z5Y/UznrpG5kt1im8yA==
@@ -10478,7 +10475,7 @@ semver@7.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.0.0.tgz#5f3ca35761e47e05b206c6daff2cf814f0316b8e"
   integrity sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==
 
-semver@7.3.8, semver@^7.0.0, semver@^7.1.3, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7:
+semver@7.3.8, semver@^7.0.0, semver@^7.1.3, semver@^7.3.2, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8:
   version "7.3.8"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.3.8.tgz#07a78feafb3f7b32347d725e33de7e2a2df67798"
   integrity sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==
@@ -11738,13 +11735,13 @@ validate-peer-dependencies@^1.0.0, validate-peer-dependencies@^1.1.0:
     resolve-package-path "^3.1.0"
     semver "^7.3.2"
 
-validate-peer-dependencies@^2.0.0, validate-peer-dependencies@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/validate-peer-dependencies/-/validate-peer-dependencies-2.1.0.tgz#1ad8218b1b168aeb500165f9de2a3f53269ece56"
-  integrity sha512-x+M+mp16g4N+jDQJO6a+AKnMHAViov9mRzYfgMYR6Bq+UTwewf8aTQsP+e1QH0oZrADqP7fuI/bEbl3CzRFhOQ==
+validate-peer-dependencies@^2.0.0, validate-peer-dependencies@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/validate-peer-dependencies/-/validate-peer-dependencies-2.2.0.tgz#47b8ff008f66a66fc5d8699123844522c1d874f4"
+  integrity sha512-8X1OWlERjiUY6P6tdeU9E0EwO8RA3bahoOVG7ulOZT5MqgNDUO/BQoVjYiHPcNe+v8glsboZRIw9iToMAA2zAA==
   dependencies:
-    resolve-package-path "^4.0.0"
-    semver "^7.3.2"
+    resolve-package-path "^4.0.3"
+    semver "^7.3.8"
 
 value-or-promise@1.0.11:
   version "1.0.11"
