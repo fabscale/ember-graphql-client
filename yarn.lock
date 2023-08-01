@@ -1686,7 +1686,7 @@ __metadata:
     "@glimmer/component": ~1.1.2
     "@glimmer/tracking": ~1.1.2
     "@graphql-tools/schema": ^8.5.0
-    "@graphql-tools/utils": ^8.13.1
+    "@graphql-tools/utils": ^10.0.4
     "@types/ember-qunit": ~5.0.0
     "@types/ember-resolver": ~5.0.11
     "@types/ember__application": ~4.0.0
@@ -2056,14 +2056,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/utils@npm:^8.13.1":
-  version: 8.13.1
-  resolution: "@graphql-tools/utils@npm:8.13.1"
+"@graphql-tools/utils@npm:^10.0.4":
+  version: 10.0.4
+  resolution: "@graphql-tools/utils@npm:10.0.4"
   dependencies:
-    tslib: "npm:^2.4.0"
+    "@graphql-typed-document-node/core": ^3.1.1
+    dset: ^3.1.2
+    tslib: ^2.4.0
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: c86537f1e38d4c86ab5d5d051d78e48e7de48b0f1601af49592e838e01f5b31b1210227749b3d0c830b55a5cf2900270e55c4dfd4d4a5fca1cb1239624d30b25
+  checksum: 8/cb90c4c7f12dc6a5a519c4dfa5298b33d902ff921a4bc5d7cd15f5fe9e4eb3bf79cefd671de30661008d762cae5fef33420249f46bcbef5d7b38a949e5718f2d
   languageName: node
   linkType: hard
 
@@ -6340,6 +6342,13 @@ __metadata:
   dependencies:
     is-obj: "npm:^2.0.0"
   checksum: 62e087d93c875584277876309acb152e7c70d425d873c87b48367672f0811fc4c65865337c4e04d98dee2bc1c61c99c61f739f95140dd384c8fde84ff7cc5dca
+  languageName: node
+  linkType: hard
+
+"dset@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "dset@npm:3.1.2"
+  checksum: 8/4f8066f517aa0a70af688c66e9a0a5590f0aada76f6edc7ba9ddb309e27d3a6d65c0a2e31ab2a84005d4c791e5327773cdde59b8ab169050330a0dc283663e87
   languageName: node
   linkType: hard
 
