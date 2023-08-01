@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 7
+  version: 6
   cacheKey: 9
 
 "@aashutoshrathi/word-wrap@npm:^1.2.3":
@@ -1615,63 +1615,63 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ember-graphql-client/client@npm:0.5.2, @ember-graphql-client/client@workspace:packages/client":
+"@ember-graphql-client/client@0.5.2, @ember-graphql-client/client@workspace:packages/client":
   version: 0.0.0-use.local
   resolution: "@ember-graphql-client/client@workspace:packages/client"
   dependencies:
-    "@ember/optional-features": "npm:~2.0.0"
-    "@ember/test-helpers": "npm:~2.9.3"
-    "@ember/test-waiters": "npm:^3.0.0"
-    "@embroider/test-setup": "npm:~1.8.3"
-    "@glimmer/component": "npm:~1.1.2"
-    "@glimmer/tracking": "npm:~1.1.2"
-    "@types/ember-qunit": "npm:~5.0.0"
-    "@types/ember-resolver": "npm:~5.0.11"
-    "@types/ember__application": "npm:~4.0.0"
-    "@types/ember__component": "npm:~4.0.0"
-    "@types/ember__controller": "npm:~4.0.0"
-    "@types/ember__debug": "npm:~4.0.0"
-    "@types/ember__error": "npm:~4.0.0"
-    "@types/ember__object": "npm:~4.0.0"
-    "@types/ember__routing": "npm:~4.0.0"
-    "@types/ember__runloop": "npm:~4.0.0"
-    "@types/ember__service": "npm:~4.0.0"
-    "@types/ember__template": "npm:~4.0.0"
-    "@types/ember__test": "npm:~4.0.0"
-    "@types/ember__test-helpers": "npm:~2.9.1"
-    "@types/ember__utils": "npm:~4.0.0"
-    "@types/htmlbars-inline-precompile": "npm:~3.0.0"
-    "@types/qunit": "npm:~2.19.1"
-    broccoli-asset-rev: "npm:~3.0.0"
-    broccoli-graphql-filter: "npm:^1.0.1"
-    ember-auto-import: "npm:^2.5.0"
-    ember-cached-decorator-polyfill: "npm:^0.1.4"
-    ember-cli: "npm:~4.6.0"
-    ember-cli-babel: "npm:^7.26.11"
-    ember-cli-dependency-checker: "npm:~3.3.1"
-    ember-cli-htmlbars: "npm:^6.2.0"
-    ember-cli-inject-live-reload: "npm:~2.1.0"
-    ember-cli-sri: "npm:~2.1.1"
-    ember-cli-terser: "npm:~4.0.2"
-    ember-cli-typescript: "npm:^5.2.1"
-    ember-cli-typescript-blueprints: "npm:~3.0.0"
-    ember-disable-prototype-extensions: "npm:~1.1.3"
-    ember-fetch: "npm:^8.1.0"
-    ember-load-initializers: "npm:~2.1.2"
-    ember-qunit: "npm:~6.2.0"
-    ember-resolver: "npm:~8.0.3"
-    ember-source: "npm:~4.12.0"
-    ember-source-channel-url: "npm:~3.0.0"
-    ember-template-lint: "npm:~4.17.0"
-    ember-try: "npm:~2.0.0"
-    graphql: "npm:^16.7.1"
-    graphql-request: "npm:^5.2.0"
-    loader.js: "npm:~4.7.0"
-    npm-run-all: "npm:~4.1.5"
-    qunit: "npm:~2.19.1"
-    qunit-dom: "npm:~2.0.0"
-    typescript: "npm:~4.9.3"
-    webpack: "npm:~5.88.1"
+    "@ember/optional-features": ~2.0.0
+    "@ember/test-helpers": ~3.2.0
+    "@ember/test-waiters": ^3.0.0
+    "@embroider/test-setup": ~1.8.3
+    "@glimmer/component": ~1.1.2
+    "@glimmer/tracking": ~1.1.2
+    "@types/ember-qunit": ~5.0.0
+    "@types/ember-resolver": ~5.0.11
+    "@types/ember__application": ~4.0.0
+    "@types/ember__component": ~4.0.0
+    "@types/ember__controller": ~4.0.0
+    "@types/ember__debug": ~4.0.0
+    "@types/ember__error": ~4.0.0
+    "@types/ember__object": ~4.0.0
+    "@types/ember__routing": ~4.0.0
+    "@types/ember__runloop": ~4.0.0
+    "@types/ember__service": ~4.0.0
+    "@types/ember__template": ~4.0.0
+    "@types/ember__test": ~4.0.0
+    "@types/ember__test-helpers": ~2.9.1
+    "@types/ember__utils": ~4.0.0
+    "@types/htmlbars-inline-precompile": ~3.0.0
+    "@types/qunit": ~2.19.1
+    broccoli-asset-rev: ~3.0.0
+    broccoli-graphql-filter: ^1.0.1
+    ember-auto-import: ^2.5.0
+    ember-cached-decorator-polyfill: ^0.1.4
+    ember-cli: ~4.6.0
+    ember-cli-babel: ^7.26.11
+    ember-cli-dependency-checker: ~3.3.1
+    ember-cli-htmlbars: ^6.2.0
+    ember-cli-inject-live-reload: ~2.1.0
+    ember-cli-sri: ~2.1.1
+    ember-cli-terser: ~4.0.2
+    ember-cli-typescript: ^5.2.1
+    ember-cli-typescript-blueprints: ~3.0.0
+    ember-disable-prototype-extensions: ~1.1.3
+    ember-fetch: ^8.1.0
+    ember-load-initializers: ~2.1.2
+    ember-qunit: ~6.2.0
+    ember-resolver: ~8.0.3
+    ember-source: ~4.12.0
+    ember-source-channel-url: ~3.0.0
+    ember-template-lint: ~4.17.0
+    ember-try: ~2.0.0
+    graphql: ^16.7.1
+    graphql-request: ^5.2.0
+    loader.js: ~4.7.0
+    npm-run-all: ~4.1.5
+    qunit: ~2.19.1
+    qunit-dom: ~2.0.0
+    typescript: ~4.9.3
+    webpack: ~5.88.1
   languageName: unknown
   linkType: soft
 
@@ -1679,55 +1679,55 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ember-graphql-client/mock@workspace:packages/mock"
   dependencies:
-    "@ember-graphql-client/client": "npm:0.5.2"
-    "@ember/optional-features": "npm:~2.0.0"
-    "@ember/test-helpers": "npm:~2.9.3"
-    "@embroider/test-setup": "npm:~1.8.3"
-    "@glimmer/component": "npm:~1.1.2"
-    "@glimmer/tracking": "npm:~1.1.2"
-    "@graphql-tools/schema": "npm:^8.5.0"
-    "@graphql-tools/utils": "npm:^8.13.1"
-    "@types/ember-qunit": "npm:~5.0.0"
-    "@types/ember-resolver": "npm:~5.0.11"
-    "@types/ember__application": "npm:~4.0.0"
-    "@types/ember__component": "npm:~4.0.0"
-    "@types/ember__controller": "npm:~4.0.0"
-    "@types/ember__debug": "npm:~4.0.0"
-    "@types/ember__error": "npm:~4.0.0"
-    "@types/ember__object": "npm:~4.0.0"
-    "@types/ember__routing": "npm:~4.0.0"
-    "@types/ember__runloop": "npm:~4.0.0"
-    "@types/ember__service": "npm:~4.0.0"
-    "@types/ember__template": "npm:~4.0.0"
-    "@types/ember__test": "npm:~4.0.0"
-    "@types/ember__test-helpers": "npm:~2.9.1"
-    "@types/ember__utils": "npm:~4.0.0"
-    "@types/htmlbars-inline-precompile": "npm:~3.0.0"
-    "@types/qunit": "npm:~2.19.1"
-    broccoli-asset-rev: "npm:~3.0.0"
-    ember-auto-import: "npm:^2.5.0"
-    ember-cli: "npm:~4.6.0"
-    ember-cli-babel: "npm:^7.26.11"
-    ember-cli-dependency-checker: "npm:~3.3.1"
-    ember-cli-htmlbars: "npm:~6.2.0"
-    ember-cli-inject-live-reload: "npm:~2.1.0"
-    ember-cli-sri: "npm:~2.1.1"
-    ember-cli-terser: "npm:~4.0.2"
-    ember-disable-prototype-extensions: "npm:~1.1.3"
-    ember-load-initializers: "npm:~2.1.2"
-    ember-qunit: "npm:~6.2.0"
-    ember-resolver: "npm:~8.0.3"
-    ember-source: "npm:~4.12.0"
-    ember-source-channel-url: "npm:~3.0.0"
-    ember-template-lint: "npm:~4.17.0"
-    ember-try: "npm:~2.0.0"
-    graphql: "npm:^16.7.1"
-    graphql-request: "npm:^5.2.0"
-    loader.js: "npm:~4.7.0"
-    npm-run-all: "npm:~4.1.5"
-    qunit: "npm:~2.19.1"
-    qunit-dom: "npm:~2.0.0"
-    webpack: "npm:~5.88.1"
+    "@ember-graphql-client/client": 0.5.2
+    "@ember/optional-features": ~2.0.0
+    "@ember/test-helpers": ~3.2.0
+    "@embroider/test-setup": ~1.8.3
+    "@glimmer/component": ~1.1.2
+    "@glimmer/tracking": ~1.1.2
+    "@graphql-tools/schema": ^8.5.0
+    "@graphql-tools/utils": ^8.13.1
+    "@types/ember-qunit": ~5.0.0
+    "@types/ember-resolver": ~5.0.11
+    "@types/ember__application": ~4.0.0
+    "@types/ember__component": ~4.0.0
+    "@types/ember__controller": ~4.0.0
+    "@types/ember__debug": ~4.0.0
+    "@types/ember__error": ~4.0.0
+    "@types/ember__object": ~4.0.0
+    "@types/ember__routing": ~4.0.0
+    "@types/ember__runloop": ~4.0.0
+    "@types/ember__service": ~4.0.0
+    "@types/ember__template": ~4.0.0
+    "@types/ember__test": ~4.0.0
+    "@types/ember__test-helpers": ~2.9.1
+    "@types/ember__utils": ~4.0.0
+    "@types/htmlbars-inline-precompile": ~3.0.0
+    "@types/qunit": ~2.19.1
+    broccoli-asset-rev: ~3.0.0
+    ember-auto-import: ^2.5.0
+    ember-cli: ~4.6.0
+    ember-cli-babel: ^7.26.11
+    ember-cli-dependency-checker: ~3.3.1
+    ember-cli-htmlbars: ~6.2.0
+    ember-cli-inject-live-reload: ~2.1.0
+    ember-cli-sri: ~2.1.1
+    ember-cli-terser: ~4.0.2
+    ember-disable-prototype-extensions: ~1.1.3
+    ember-load-initializers: ~2.1.2
+    ember-qunit: ~6.2.0
+    ember-resolver: ~8.0.3
+    ember-source: ~4.12.0
+    ember-source-channel-url: ~3.0.0
+    ember-template-lint: ~4.17.0
+    ember-try: ~2.0.0
+    graphql: ^16.7.1
+    graphql-request: ^5.2.0
+    loader.js: ~4.7.0
+    npm-run-all: ~4.1.5
+    qunit: ~2.19.1
+    qunit-dom: ~2.0.0
+    webpack: ~5.88.1
   languageName: unknown
   linkType: soft
 
@@ -1752,7 +1752,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ember/test-helpers@npm:*, @ember/test-helpers@npm:~2.9.3":
+"@ember/test-helpers@npm:*":
   version: 2.9.3
   resolution: "@ember/test-helpers@npm:2.9.3"
   dependencies:
@@ -1770,7 +1770,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ember/test-waiters@npm:^3.0.0":
+"@ember/test-helpers@npm:~3.2.0":
+  version: 3.2.0
+  resolution: "@ember/test-helpers@npm:3.2.0"
+  dependencies:
+    "@ember/test-waiters": ^3.0.2
+    "@embroider/macros": ^1.10.0
+    "@simple-dom/interface": ^1.4.0
+    broccoli-debug: ^0.6.5
+    broccoli-funnel: ^3.0.8
+    ember-auto-import: ^2.6.0
+    ember-cli-babel: ^7.26.11
+    ember-cli-htmlbars: ^6.2.0
+  peerDependencies:
+    ember-source: ^4.0.0 || ^5.0.0
+  checksum: 8/317a79a70d8679734f72b1765833862858616b40abc2d51cb880720dd9977e2502bcae8d58a7ed7e9e2f646ef0cc8b1a20896aa2d1326d28500de21cabad5c6e
+  languageName: node
+  linkType: hard
+
+"@ember/test-waiters@npm:^3.0.0, @ember/test-waiters@npm:^3.0.2":
   version: 3.0.2
   resolution: "@ember/test-waiters@npm:3.0.2"
   dependencies:
@@ -13822,16 +13840,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.6#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.11.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.13.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.17.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.4.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.5.0#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.4.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.5.0#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#optional!builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: "npm:^2.9.0"
     path-parse: "npm:^1.0.7"
     supports-preserve-symlinks-flag: "npm:^1.0.0"
   bin:
     resolve: bin/resolve
-  checksum: a6f214b97d932445796f78dab7a898ec78966327e0d6cb571f90b6ac0f3b3347bf6bab0a071d899bfdc316b26ed845f6655310b38b8f6ee4da5272a0c5ecef85
+  checksum: 8/5656f4d0bedcf8eb52685c1abdf8fbe73a1603bb1160a24d716e27a57f6cecbe2432ff9c89c2bd57542c3a7b9d14b1882b73bfe2e9d7849c9a4c0b8b39f02b8b
   languageName: node
   linkType: hard
 
@@ -13978,14 +13996,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@babel/eslint-parser": "npm:~7.22.5"
-    "@release-it-plugins/lerna-changelog": "npm:~5.0.0"
-    "@release-it-plugins/workspaces": "npm:~3.2.0"
-    "@typescript-eslint/parser": "npm:~5.60.1"
-    eslint: "npm:~8.44.0"
-    fabscale-eslint-config: "npm:~1.6.0"
-    prettier: "npm:~2.8.0"
-    release-it: "npm:~15.11.0"
+    "@babel/eslint-parser": ~7.22.5
+    "@release-it-plugins/lerna-changelog": ~5.0.0
+    "@release-it-plugins/workspaces": ~3.2.0
+    "@typescript-eslint/parser": ~5.60.1
+    eslint: ~8.44.0
+    fabscale-eslint-config: ~1.6.0
+    prettier: ~2.8.0
+    release-it: ~15.11.0
   languageName: unknown
   linkType: soft
 
@@ -15570,13 +15588,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A~4.9.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@~4.9.3#~builtin<compat/typescript>":
   version: 4.9.3
-  resolution: "typescript@patch:typescript@npm%3A4.9.3#optional!builtin<compat/typescript>::version=4.9.3&hash=a66ed4"
+  resolution: "typescript@patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=a66ed4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: a6b91741c70bb924536fa3cac2f3ff89f2c8d1dbd54a6f23a58ec764b88a4832910fd74717c5df72b96304bbcca22736eb61dd96249a5b3e63f4cb4746af6927
+  checksum: 8/d7bdcf5e18193f709339540d69577f7b0389000265db2bf10edfaa67336a29d6bcbee11828084150f7fdd110d605794cfa6df33bebc0a2e33daad2dbe2a7a59f
   languageName: node
   linkType: hard
 
