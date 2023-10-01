@@ -14,7 +14,7 @@
     "@babel/eslint-parser": "~7.22.5",
     "@release-it-plugins/lerna-changelog": "~5.0.0",
     "@release-it-plugins/workspaces": "~3.2.0",
-    "@typescript-eslint/parser": "~5.60.1",
+    "@typescript-eslint/parser": "~6.7.3",
     "eslint": "~8.46.0",
     "fabscale-eslint-config": "~1.6.0",
     "prettier": "~2.8.0",
