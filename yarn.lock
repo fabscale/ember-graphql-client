@@ -1658,7 +1658,7 @@ __metadata:
     ember-disable-prototype-extensions: ~1.1.3
     ember-fetch: ^8.1.0
     ember-load-initializers: ~2.1.2
-    ember-qunit: ~6.2.0
+    ember-qunit: ~8.0.1
     ember-resolver: ~8.0.3
     ember-source: ~4.12.0
     ember-source-channel-url: ~3.0.0
@@ -1715,7 +1715,7 @@ __metadata:
     ember-cli-terser: ~4.0.2
     ember-disable-prototype-extensions: ~1.1.3
     ember-load-initializers: ~2.1.2
-    ember-qunit: ~6.2.0
+    ember-qunit: ~8.0.1
     ember-resolver: ~8.0.3
     ember-source: ~4.12.0
     ember-source-channel-url: ~3.0.0
@@ -1782,6 +1782,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@embroider/addon-shim@npm:^1.8.6":
+  version: 1.8.6
+  resolution: "@embroider/addon-shim@npm:1.8.6"
+  dependencies:
+    "@embroider/shared-internals": ^2.2.3
+    broccoli-funnel: ^3.0.8
+    semver: ^7.3.8
+  checksum: 8/63214fbc1b3f333b052791cdfc0c278c348dd6ca4ec2b53c96183150e3d5fe9882cdd3065853e3d6a2c964c962d718b87f2fd8a17414b53fc3a3997d5eedb30e
+  languageName: node
+  linkType: hard
+
 "@embroider/macros@npm:^1.0.0, @embroider/macros@npm:^1.10.0, @embroider/macros@npm:^1.9.0":
   version: 1.10.0
   resolution: "@embroider/macros@npm:1.10.0"
@@ -1798,6 +1809,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@embroider/macros@npm:^1.13.1":
+  version: 1.13.2
+  resolution: "@embroider/macros@npm:1.13.2"
+  dependencies:
+    "@embroider/shared-internals": 2.5.0
+    assert-never: ^1.2.1
+    babel-import-util: ^2.0.0
+    ember-cli-babel: ^7.26.6
+    find-up: ^5.0.0
+    lodash: ^4.17.21
+    resolve: ^1.20.0
+    semver: ^7.3.2
+  peerDependencies:
+    "@glint/template": ^1.0.0
+  peerDependenciesMeta:
+    "@glint/template":
+      optional: true
+  checksum: 8/493d337ee670f229a3d21de06527fcd8febb03582a8d7ba34b1d7ac9f25eaaea608ad3646263b6660d2e15f325f0480d4cda0cab3e89011b611cefd30d1cb700
+  languageName: node
+  linkType: hard
+
 "@embroider/shared-internals@npm:2.0.0, @embroider/shared-internals@npm:^2.0.0":
   version: 2.0.0
   resolution: "@embroider/shared-internals@npm:2.0.0"
@@ -1811,6 +1843,23 @@ __metadata:
     semver: "npm:^7.3.5"
     typescript-memoize: "npm:^1.0.1"
   checksum: 146617dd72977b46d0c05fd068db1435b53a17b556c1a8c2c6597674feff82189b881c1ee50e5210bddc3cbf8bc37d5bf298d6ff28025d84fda49f9198b32120
+  languageName: node
+  linkType: hard
+
+"@embroider/shared-internals@npm:2.5.0, @embroider/shared-internals@npm:^2.2.3":
+  version: 2.5.0
+  resolution: "@embroider/shared-internals@npm:2.5.0"
+  dependencies:
+    babel-import-util: ^2.0.0
+    debug: ^4.3.2
+    ember-rfc176-data: ^0.3.17
+    fs-extra: ^9.1.0
+    js-string-escape: ^1.0.1
+    lodash: ^4.17.21
+    resolve-package-path: ^4.0.1
+    semver: ^7.3.5
+    typescript-memoize: ^1.0.1
+  checksum: 8/4e887156a88638cacf2a1538f12e2055a65f28063081eb6fbc7075f5f7725fe317264dadbf05907734eba21086c217641865d9b473acf6015a76255c48a213e3
   languageName: node
   linkType: hard
 
@@ -4005,6 +4054,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-import-util@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "babel-import-util@npm:2.0.1"
+  checksum: 8/ca4070648b562d56b31287911aef962aae08f505678038c4fa51f1c11ef7106ebf985a449f83c83b9a3f928dc66fca2f6157861420a1c309dfb17edd18f7c42e
+  languageName: node
+  linkType: hard
+
 "babel-loader@npm:^8.0.6":
   version: 8.2.5
   resolution: "babel-loader@npm:8.2.5"
@@ -5679,13 +5735,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"common-tags@npm:^1.8.0":
-  version: 1.8.2
-  resolution: "common-tags@npm:1.8.2"
-  checksum: e1080df9fd8eefd8c4b4a983dc39b41c251d85a05c15991592762ff0c78b433e9ac7bb02518c12a89d1cb33dbb466872fbbb7030ecfc7142b0810747e7859b3b
-  languageName: node
-  linkType: hard
-
 "commondir@npm:^1.0.1":
   version: 1.0.1
   resolution: "commondir@npm:1.0.1"
@@ -6388,7 +6437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ember-auto-import@npm:^2.5.0, ember-auto-import@npm:^2.6.0":
+"ember-auto-import@npm:^2.5.0":
   version: 2.6.3
   resolution: "ember-auto-import@npm:2.6.3"
   dependencies:
@@ -6458,7 +6507,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ember-cli-babel@npm:^7.0.0, ember-cli-babel@npm:^7.13.0, ember-cli-babel@npm:^7.13.2, ember-cli-babel@npm:^7.21.0, ember-cli-babel@npm:^7.22.1, ember-cli-babel@npm:^7.23.0, ember-cli-babel@npm:^7.23.1, ember-cli-babel@npm:^7.26.11, ember-cli-babel@npm:^7.26.6, ember-cli-babel@npm:^7.7.3":
+"ember-cli-babel@npm:^7.0.0, ember-cli-babel@npm:^7.13.0, ember-cli-babel@npm:^7.21.0, ember-cli-babel@npm:^7.22.1, ember-cli-babel@npm:^7.23.0, ember-cli-babel@npm:^7.23.1, ember-cli-babel@npm:^7.26.11, ember-cli-babel@npm:^7.26.6, ember-cli-babel@npm:^7.7.3":
   version: 7.26.11
   resolution: "ember-cli-babel@npm:7.26.11"
   dependencies:
@@ -6626,12 +6675,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ember-cli-test-loader@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "ember-cli-test-loader@npm:3.0.0"
+"ember-cli-test-loader@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "ember-cli-test-loader@npm:3.1.0"
   dependencies:
-    ember-cli-babel: "npm:^7.13.2"
-  checksum: 703641cf8ff0a8b3728e93238f5181998e52279fab6166e75b51d092543f47f9e4759352ce1646edc6ec61777a659a12af56af40d7d2601306c85bb0791d8afe
+    ember-cli-babel: ^7.23.0
+  checksum: 8/f9831c6e39970dc31de596e8d46a08c30b02fa06c88f0437899bc9617e883e6ced80d1700a84e5cae065c94174f9fa6a3459c5906824e353d17da9edb1fb643f
   languageName: node
   linkType: hard
 
@@ -6949,24 +6998,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ember-qunit@npm:~6.2.0":
-  version: 6.2.0
-  resolution: "ember-qunit@npm:6.2.0"
+"ember-qunit@npm:~8.0.1":
+  version: 8.0.1
+  resolution: "ember-qunit@npm:8.0.1"
   dependencies:
-    broccoli-funnel: "npm:^3.0.8"
-    broccoli-merge-trees: "npm:^3.0.2"
-    common-tags: "npm:^1.8.0"
-    ember-auto-import: "npm:^2.6.0"
-    ember-cli-babel: "npm:^7.26.11"
-    ember-cli-test-loader: "npm:^3.0.0"
-    resolve-package-path: "npm:^4.0.3"
-    silent-error: "npm:^1.1.1"
-    validate-peer-dependencies: "npm:^2.2.0"
+    "@embroider/addon-shim": ^1.8.6
+    "@embroider/macros": ^1.13.1
+    ember-cli-test-loader: ^3.1.0
   peerDependencies:
-    "@ember/test-helpers": ^2.9.3
-    ember-source: ">=3.28"
+    "@ember/test-helpers": ">=3.0.3"
+    ember-source: ">=4.0.0"
     qunit: ^2.13.0
-  checksum: 0718d23142d8fbbaba4bdfad8872756e7d2c1ea018259bca5938bc37636efffdcceeecbe5a6acb97509c645efefee2b54711751b41baa01269eb73b3dce65e6e
+  checksum: 8/09d13a4d9a9824e2d5177cdd5578f0a221a189a4d8f4b5c641c06f76d664fd80d64bbb740fd9abec7153116b61a0b9312906ee6f6ec6cdfb942b664b104475e0
   languageName: node
   linkType: hard
 
@@ -13838,7 +13881,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.4.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.5.0#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.4.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.5.0#~builtin<compat/resolve>":
   version: 1.22.1
   resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
@@ -15957,7 +16000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"validate-peer-dependencies@npm:^2.0.0, validate-peer-dependencies@npm:^2.2.0":
+"validate-peer-dependencies@npm:^2.0.0":
   version: 2.2.0
   resolution: "validate-peer-dependencies@npm:2.2.0"
   dependencies:
