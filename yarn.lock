@@ -1622,7 +1622,7 @@ __metadata:
     "@ember/optional-features": ~2.0.0
     "@ember/test-helpers": ~2.9.3
     "@ember/test-waiters": ^3.0.0
-    "@embroider/test-setup": ~1.8.3
+    "@embroider/test-setup": ~3.0.2
     "@glimmer/component": ~1.1.2
     "@glimmer/tracking": ~1.1.2
     "@types/ember-qunit": ~5.0.0
@@ -1682,7 +1682,7 @@ __metadata:
     "@ember-graphql-client/client": 0.5.2
     "@ember/optional-features": ~2.0.0
     "@ember/test-helpers": ~2.9.3
-    "@embroider/test-setup": ~1.8.3
+    "@embroider/test-setup": ~3.0.2
     "@glimmer/component": ~1.1.2
     "@glimmer/tracking": ~1.1.2
     "@graphql-tools/schema": ^8.5.0
@@ -1814,13 +1814,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@embroider/test-setup@npm:~1.8.3":
-  version: 1.8.3
-  resolution: "@embroider/test-setup@npm:1.8.3"
+"@embroider/test-setup@npm:~3.0.2":
+  version: 3.0.2
+  resolution: "@embroider/test-setup@npm:3.0.2"
   dependencies:
-    lodash: "npm:^4.17.21"
-    resolve: "npm:^1.20.0"
-  checksum: f3a373c422f1610ff6c34fe7c8ada8ed15f2319ed56547de8900659337b227676f2307f4741dbfca81aa4569dce1f352e9754aef831f0b61641e35f31017fe0f
+    lodash: ^4.17.21
+    resolve: ^1.20.0
+  peerDependencies:
+    "@embroider/compat": ^3.2.2
+    "@embroider/core": ^3.3.0
+    "@embroider/webpack": ^3.2.0
+  peerDependenciesMeta:
+    "@embroider/compat":
+      optional: true
+    "@embroider/core":
+      optional: true
+    "@embroider/webpack":
+      optional: true
+  checksum: 8/34baae4a5ef4bee2d15b063c28a0845c95b88385368cf1e465a7f78e3223f97127d5151a0c2b64be11daa508d5fb666178fa91a49c54f08e024c39f74b0288b5
   languageName: node
   linkType: hard
 
@@ -13838,7 +13849,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.4.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.5.0#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.10.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.11.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.13.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.4.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.5.0#~builtin<compat/resolve>":
   version: 1.22.1
   resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
